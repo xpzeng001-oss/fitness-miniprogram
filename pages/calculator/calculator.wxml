@@ -1,0 +1,193 @@
+<!--pages/calculator/calculator.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header animate-fade-in">
+    <text class="page-title">1RM 计算器</text>
+    <text class="page-subtitle">科学计算你的最大力量</text>
+  </view>
+
+  <!-- 计算器卡片 -->
+  <view class="card calc-card animate-slide-up">
+    <view class="card-title">
+      <text class="card-title-icon">🧮</text>
+      <text>输入训练数据</text>
+    </view>
+
+    <!-- 动作选择 -->
+    <view class="input-group">
+      <text class="input-label">选择动作</text>
+      <picker bindchange="onExerciseChange" value="{{exerciseIndex}}" range="{{exerciseNames}}">
+        <view class="picker-btn">
+          <text class="picker-value">{{selectedExercise || '请选择动作'}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 重量和次数输入 -->
+    <view class="input-row">
+      <view class="input-group flex-1">
+        <text class="input-label">完成重量 (kg)</text>
+        <input class="input input-lg" type="digit" placeholder="如 100"
+               style="color:#ffffff;"
+               placeholder-style="color:#6a6a7a;"
+               value="{{weight}}" bindinput="onWeightInput"/>
+      </view>
+
+      <view class="input-group flex-1 ml-20">
+        <text class="input-label">完成次数</text>
+        <input class="input input-lg" type="number" placeholder="如 5"
+               style="color:#ffffff;"
+               placeholder-style="color:#6a6a7a;"
+               value="{{reps}}" bindinput="onRepsInput"/>
+      </view>
+    </view>
+
+    <!-- 计算按钮 -->
+    <button class="btn btn-primary btn-block mt-30" bindtap="calculate">
+      <text>计算 1RM</text>
+    </button>
+  </view>
+
+  <!-- 计算结果 -->
+  <view class="card result-card animate-slide-up" wx:if="{{oneRM > 0}}" style="animation-delay: 0.1s;">
+    <view class="result-header">
+      <text class="result-label">预估 1RM</text>
+      <view class="result-main">
+        <text class="result-value">{{oneRM}}</text>
+        <text class="result-unit">kg</text>
+      </view>
+      <text class="result-formula">基于 Epley 公式计算</text>
+    </view>
+
+    <!-- 保存为PR -->
+    <view class="save-pr-section" wx:if="{{!isPRSaved}}">
+      <text class="save-pr-hint">{{isPRBetter ? '🎉 超越当前PR！' : ''}}</text>
+      <button class="btn btn-success btn-block" bindtap="saveAsPR" wx:if="{{isPRBetter}}">
+        保存为新 PR
+      </button>
+    </view>
+    <view class="pr-saved" wx:else>
+      <text class="pr-saved-text">✓ 已保存为 PR</text>
+    </view>
+  </view>
+
+  <!-- 训练重量推荐 -->
+  <view class="card recommend-card animate-slide-up" wx:if="{{oneRM > 0}}" style="animation-delay: 0.2s;">
+    <view class="card-title">
+      <text class="card-title-icon">💡</text>
+      <text>训练重量推荐</text>
+    </view>
+
+    <view class="recommend-grid">
+      <!-- 力量训练 -->
+      <view class="recommend-item strength">
+        <view class="recommend-header">
+          <text class="recommend-icon">💪</text>
+          <text class="recommend-title">力量训练</text>
+        </view>
+        <view class="recommend-percent">{{recommendations.strength.percent}}% 1RM</view>
+        <view class="recommend-weight">
+          <text class="weight-value">{{recommendations.strength.weight}}</text>
+          <text class="weight-unit">kg</text>
+        </view>
+        <view class="recommend-reps">{{recommendations.strength.reps}} 次/组</view>
+      </view>
+
+      <!-- 增肌训练 -->
+      <view class="recommend-item hypertrophy">
+        <view class="recommend-header">
+          <text class="recommend-icon">🏆</text>
+          <text class="recommend-title">增肌训练</text>
+        </view>
+        <view class="recommend-percent">{{recommendations.hypertrophy.percent}}% 1RM</view>
+        <view class="recommend-weight">
+          <text class="weight-value">{{recommendations.hypertrophy.weight}}</text>
+          <text class="weight-unit">kg</text>
+        </view>
+        <view class="recommend-reps">{{recommendations.hypertrophy.reps}} 次/组</view>
+      </view>
+
+      <!-- 耐力训练 -->
+      <view class="recommend-item endurance">
+        <view class="recommend-header">
+          <text class="recommend-icon">🏃</text>
+          <text class="recommend-title">耐力训练</text>
+        </view>
+        <view class="recommend-percent">{{recommendations.endurance.percent}}% 1RM</view>
+        <view class="recommend-weight">
+          <text class="weight-value">{{recommendations.endurance.weight}}</text>
+          <text class="weight-unit">kg</text>
+        </view>
+        <view class="recommend-reps">{{recommendations.endurance.reps}} 次/组</view>
+      </view>
+
+      <!-- 热身 -->
+      <view class="recommend-item warmup">
+        <view class="recommend-header">
+          <text class="recommend-icon">🔥</text>
+          <text class="recommend-title">热身</text>
+        </view>
+        <view class="recommend-percent">{{recommendations.warmup.percent}}% 1RM</view>
+        <view class="recommend-weight">
+          <text class="weight-value">{{recommendations.warmup.weight}}</text>
+          <text class="weight-unit">kg</text>
+        </view>
+        <view class="recommend-reps">{{recommendations.warmup.reps}} 次/组</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 百分比对照表 -->
+  <view class="card animate-slide-up" wx:if="{{oneRM > 0}}" style="animation-delay: 0.3s;">
+    <view class="card-title">
+      <text class="card-title-icon">📊</text>
+      <text>重量百分比表</text>
+    </view>
+
+    <view class="percent-table">
+      <view class="percent-row header">
+        <text class="percent-col">百分比</text>
+        <text class="percent-col">重量</text>
+        <text class="percent-col">预估次数</text>
+      </view>
+      <view class="percent-row" wx:for="{{percentTable}}" wx:key="percent">
+        <text class="percent-col">{{item.percent}}%</text>
+        <text class="percent-col weight">{{item.weight}} kg</text>
+        <text class="percent-col reps">{{item.reps}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 公式说明 -->
+  <view class="card info-card animate-slide-up" style="animation-delay: 0.4s;">
+    <view class="card-title">
+      <text class="card-title-icon">📚</text>
+      <text>计算公式说明</text>
+    </view>
+
+    <view class="formula-section">
+      <view class="formula-item">
+        <text class="formula-name">Epley 公式</text>
+        <text class="formula-math">1RM = 重量 × (1 + 次数/30)</text>
+        <text class="formula-desc">适用于中等次数 (3-10次) 的估算，最常用的公式之一</text>
+      </view>
+    </view>
+
+    <view class="tips-section">
+      <view class="tip-title">使用建议</view>
+      <view class="tip-item">
+        <text class="tip-icon">•</text>
+        <text class="tip-text">次数越少，估算越准确</text>
+      </view>
+      <view class="tip-item">
+        <text class="tip-icon">•</text>
+        <text class="tip-text">建议使用 3-8 次的数据来估算</text>
+      </view>
+      <view class="tip-item">
+        <text class="tip-icon">•</text>
+        <text class="tip-text">实际测试 1RM 时请确保有人保护</text>
+      </view>
+    </view>
+  </view>
+</view>

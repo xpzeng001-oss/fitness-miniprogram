@@ -1,0 +1,38 @@
+<!-- components/upgrade-dialog/upgrade-dialog.wxml -->
+<view class="dialog-mask" wx:if="{{show}}" bindtap="onClose" catchtouchmove="preventMove">
+  <view class="dialog-container" catchtap="stopPropagation">
+    <view class="close-btn" bindtap="onClose">✕</view>
+
+    <view class="dialog-header">
+      <text class="dialog-icon">{{config.icon}}</text>
+      <text class="dialog-title">{{config.title}}</text>
+      <text class="dialog-subtitle">{{config.subtitle}}</text>
+    </view>
+
+    <view class="dialog-feature-list">
+      <view class="dialog-feature-item" wx:for="{{config.features}}" wx:key="index">
+        <text class="dialog-feature-icon">✨</text>
+        <text class="dialog-feature-text">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="dialog-pricing">
+      <view class="dialog-price-row">
+        <text class="dialog-price-label">年付</text>
+        <view class="dialog-price-value">
+          <text class="dialog-currency">¥</text>
+          <text class="dialog-amount">68</text>
+          <text class="dialog-period">/年</text>
+        </view>
+      </view>
+      <text class="dialog-price-tip">每天仅需 ¥0.18</text>
+    </view>
+
+    <view class="dialog-actions">
+      <view class="confirm-btn" bindtap="onConfirm">{{config.confirmText}}</view>
+      <view class="cancel-btn" bindtap="onClose">稍后再说</view>
+    </view>
+
+    <text class="dialog-social-proof">💬 已有 2,368 位健身者升级Pro</text>
+  </view>
+</view>

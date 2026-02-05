@@ -1,0 +1,131 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 头部欢迎区域 -->
+  <view class="header animate-fade-in">
+    <view class="greeting">
+      <text class="greeting-text">{{greeting}}</text>
+      <text class="greeting-emoji">💪</text>
+    </view>
+    <view class="date-display">{{currentDate}}</view>
+  </view>
+
+  <!-- 今日统计卡片 -->
+  <view class="stats-card card animate-slide-up">
+    <view class="stats-header">
+      <text class="stats-title">今日概览</text>
+      <view class="streak-badge" wx:if="{{streakDays > 0}}">
+        <text class="streak-fire">🔥</text>
+        <text class="streak-text">连续{{streakDays}}天</text>
+      </view>
+    </view>
+    
+    <view class="stats-grid">
+      <view class="stat-item">
+        <view class="stat-value text-primary">{{todayWorkouts}}</view>
+        <view class="stat-label">训练组数</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-value text-success">{{todayVolume}}</view>
+        <view class="stat-label">总容量(kg)</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-value text-warning">{{prCount}}</view>
+        <view class="stat-label">PR记录</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷操作 -->
+  <view class="quick-actions">
+    <view class="action-btn" bindtap="goToWorkout">
+      <view class="action-icon">🏋️</view>
+      <view class="action-text">记录训练</view>
+    </view>
+    <view class="action-btn" bindtap="goToCalculator">
+      <view class="action-icon">🧮</view>
+      <view class="action-text">1RM计算</view>
+    </view>
+    <view class="action-btn" bindtap="goToWeight">
+      <view class="action-icon">⚖️</view>
+      <view class="action-text">体重打卡</view>
+    </view>
+  </view>
+
+  <!-- 最近PR记录 -->
+  <view class="card animate-slide-up" style="animation-delay: 0.1s;">
+    <view class="card-title">
+      <text class="card-title-icon">🏆</text>
+      <text>最近PR</text>
+    </view>
+    
+    <view wx:if="{{recentPRs.length > 0}}">
+      <view class="pr-item" wx:for="{{recentPRs}}" wx:key="index">
+        <view class="pr-info">
+          <view class="pr-exercise">{{item.exercise}}</view>
+          <view class="pr-date">{{item.date}}</view>
+        </view>
+        <view class="pr-weight">
+          <text class="pr-value">{{item.weight}}</text>
+          <text class="pr-unit">kg</text>
+        </view>
+      </view>
+    </view>
+    
+    <view wx:else class="empty-state">
+      <text class="empty-icon">🎯</text>
+      <text class="empty-text">还没有PR记录，开始训练吧！</text>
+    </view>
+  </view>
+
+  <!-- 体重趋势预览 -->
+  <view class="card animate-slide-up" style="animation-delay: 0.2s;">
+    <view class="card-title">
+      <text class="card-title-icon">📊</text>
+      <text>体重趋势</text>
+    </view>
+    
+    <view wx:if="{{weightData.length > 0}}" class="weight-preview">
+      <view class="weight-current">
+        <text class="weight-value">{{currentWeight}}</text>
+        <text class="weight-unit">kg</text>
+      </view>
+      <view class="weight-change {{weightChange >= 0 ? 'increase' : 'decrease'}}">
+        <text>{{weightChange >= 0 ? '+' : ''}}{{weightChange}} kg</text>
+        <text class="weight-period">较上周</text>
+      </view>
+      
+      <!-- 简易图表 -->
+      <view class="mini-chart">
+        <view class="chart-bar" 
+              wx:for="{{weightData}}" 
+              wx:key="index"
+              style="height: {{item.height}}%;">
+        </view>
+      </view>
+    </view>
+    
+    <view wx:else class="empty-state">
+      <text class="empty-icon">📈</text>
+      <text class="empty-text">开始记录体重，追踪你的进步</text>
+    </view>
+  </view>
+
+  <!-- 今日打卡状态 -->
+  <view class="checkin-card card animate-slide-up" style="animation-delay: 0.3s;">
+    <view class="checkin-content">
+      <view class="checkin-info">
+        <text class="checkin-title">今日打卡</text>
+        <text class="checkin-status {{todayCheckin ? 'done' : ''}}">
+          {{todayCheckin ? '已完成 ✓' : '未完成'}}
+        </text>
+      </view>
+      <button class="btn {{todayCheckin ? 'btn-secondary' : 'btn-success'}}" 
+              bindtap="quickCheckin"
+              disabled="{{todayCheckin}}">
+        {{todayCheckin ? '已打卡' : '立即打卡'}}
+      </button>
+    </view>
+  </view>
+</view>

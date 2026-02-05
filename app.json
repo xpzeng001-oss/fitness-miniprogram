@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/workout/workout",
+    "pages/calculator/calculator",
+    "pages/weight/weight",
+    "pages/profile/profile",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarTitleText": "FitTracker",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#0f0f1a"
+  },
+  "tabBar": {
+    "color": "#8a8a9a",
+    "selectedColor": "#ff6b35",
+    "backgroundColor": "#1a1a2e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/workout/workout",
+        "text": "训练",
+        "iconPath": "images/workout.png",
+        "selectedIconPath": "images/workout-active.png"
+      },
+      {
+        "pagePath": "pages/calculator/calculator",
+        "text": "计算",
+        "iconPath": "images/calc.png",
+        "selectedIconPath": "images/calc-active.png"
+      },
+      {
+        "pagePath": "pages/weight/weight",
+        "text": "体重",
+        "iconPath": "images/weight.png",
+        "selectedIconPath": "images/weight-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

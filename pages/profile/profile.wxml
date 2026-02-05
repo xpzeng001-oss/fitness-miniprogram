@@ -1,0 +1,131 @@
+<!-- pages/profile/profile.wxml -->
+<view class="profile-container">
+
+  <!-- 1. 顶部用户信息卡片 -->
+  <view class="user-card">
+    <view class="user-header">
+      <view class="avatar-wrap" bindtap="changeAvatar">
+        <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
+        <text wx:else class="avatar-text">{{userInfo.nickname[0] || 'F'}}</text>
+        <view class="avatar-edit-icon">
+          <text class="edit-icon-text">✎</text>
+        </view>
+      </view>
+      <view class="user-info">
+        <view class="nickname-row" bindtap="editNickname">
+          <text class="nickname">{{userInfo.nickname}}</text>
+          <text class="nickname-edit">✎</text>
+        </view>
+        <view class="stats-brief">
+          <text class="stat-item">已训练 {{statistics.totalWorkouts}} 次</text>
+          <text class="streak" wx:if="{{statistics.currentStreak > 0}}">🔥 连续{{statistics.currentStreak}}天</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 2. 数据统计区 -->
+  <view class="stats-section">
+    <view class="section-header">
+      <text class="section-title">📊 我的训练数据</text>
+    </view>
+    <view class="stats-grid">
+      <view class="stat-card">
+        <text class="stat-value">{{statistics.totalWorkouts}}</text>
+        <text class="stat-label">总训练</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-value">{{statistics.totalPRs}}</text>
+        <text class="stat-label">PR次数</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-value">{{totalVolumeTons}}</text>
+        <text class="stat-label">总重量(吨)</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-value">{{statistics.longestStreak}}</text>
+        <text class="stat-label">最长连续(天)</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 3. 成就墙 -->
+  <view class="achievements-section">
+    <view class="section-header">
+      <text class="section-title">🏆 我的成就</text>
+      <text class="achievement-count">({{unlockedCount}}/{{totalCount}} 已解锁)</text>
+    </view>
+
+    <view class="achievement-progress">
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{achievementProgress}}%"></view>
+      </view>
+      <text class="progress-text">{{achievementProgress}}%</text>
+    </view>
+
+    <view class="achievements-grid">
+      <view
+        wx:for="{{displayAchievements}}"
+        wx:key="id"
+        class="achievement-card {{item.unlocked ? 'unlocked' : 'locked'}}"
+        bindtap="onAchievementTap"
+        data-achievement="{{item}}"
+      >
+        <text class="achievement-icon">{{item.icon}}</text>
+        <text class="achievement-title">{{item.title}}</text>
+        <text class="achievement-desc">{{item.description}}</text>
+        <text wx:if="{{item.unlocked}}" class="unlock-date">{{item.unlockedDate}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 4. 设置区 -->
+  <view class="settings-section">
+    <view class="section-header">
+      <text class="section-title">⚙️ 设置</text>
+    </view>
+    <view class="setting-group">
+      <view class="setting-item" bindtap="editProfile">
+        <text class="setting-label">个人信息</text>
+        <text class="setting-value">{{userInfo.nickname}}</text>
+        <text class="arrow">›</text>
+      </view>
+      <view class="setting-item" bindtap="changeUnit">
+        <text class="setting-label">单位设置</text>
+        <text class="setting-value">{{settings.unit}}</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+
+    <view class="section-header">
+      <text class="section-title">📦 数据管理</text>
+    </view>
+    <view class="setting-group">
+      <view class="data-summary">
+        <text class="summary-item">训练记录：{{statistics.totalWorkouts}} 条</text>
+        <text class="summary-item">个人记录：{{statistics.totalPRs}} 个</text>
+        <text class="summary-item">占用空间：{{storageSize}} KB</text>
+      </view>
+
+      <view class="setting-item" bindtap="exportData">
+        <text class="setting-label">数据导出</text>
+        <text class="arrow">›</text>
+      </view>
+      <view class="setting-item danger" bindtap="clearAllData">
+        <text class="setting-label danger-text">清除所有数据</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 5. 关于 -->
+  <view class="about-section">
+    <view class="setting-group">
+      <view class="setting-item" bindtap="showAbout">
+        <text class="setting-label">关于训练日记Pro</text>
+        <text class="setting-value">v1.0.0</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+  </view>
+</view>

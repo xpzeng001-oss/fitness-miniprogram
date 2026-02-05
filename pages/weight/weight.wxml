@@ -1,0 +1,260 @@
+<!--pages/weight/weight.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header animate-fade-in">
+    <text class="page-title">体重管理</text>
+    <text class="page-subtitle">追踪你的减脂之旅</text>
+  </view>
+
+  <!-- 今日打卡 -->
+  <view class="card checkin-card animate-slide-up">
+    <view class="checkin-header">
+      <view class="checkin-info">
+        <text class="checkin-title">今日打卡</text>
+        <view class="streak-display" wx:if="{{streakDays > 0}}">
+          <text class="streak-fire">🔥</text>
+          <text class="streak-count">连续 {{streakDays}} 天</text>
+        </view>
+      </view>
+      <view class="checkin-status {{todayCheckin ? 'done' : ''}}">
+        {{todayCheckin ? '✓ 已完成' : '未打卡'}}
+      </view>
+    </view>
+
+    <view class="weight-input-section" wx:if="{{!todayCheckin}}">
+      <view class="input-group">
+        <text class="input-label">今日体重 (kg)</text>
+        <view class="weight-input-wrapper">
+          <view class="weight-adjust" bindtap="adjustInputWeight" data-delta="-0.1">-</view>
+          <input class="input weight-input" type="digit" placeholder="输入体重"
+                 style="color:#ffffff;"
+                 placeholder-style="color:#6a6a7a;"
+                 value="{{inputWeight}}" bindinput="onWeightInput"/>
+          <view class="weight-adjust" bindtap="adjustInputWeight" data-delta="0.1">+</view>
+        </view>
+      </view>
+
+      <button class="btn btn-success btn-block mt-20" bindtap="checkin">
+        <text>打卡记录</text>
+      </button>
+    </view>
+
+    <view class="today-recorded" wx:else>
+      <view class="recorded-weight">
+        <text class="recorded-value">{{todayWeight}}</text>
+        <text class="recorded-unit">kg</text>
+      </view>
+      <text class="recorded-time">记录于 {{todayTime}}</text>
+      <view class="cancel-checkin" bindtap="cancelCheckin">
+        <text class="cancel-checkin-text">撤销打卡</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 体重概览 -->
+  <view class="card stats-overview animate-slide-up" style="animation-delay: 0.1s;">
+    <view class="overview-grid">
+      <view class="overview-item">
+        <text class="overview-label">当前体重</text>
+        <view class="overview-value-wrap">
+          <text class="overview-value">{{currentWeight || '--'}}</text>
+          <text class="overview-unit">kg</text>
+        </view>
+      </view>
+      
+      <view class="overview-divider"></view>
+      
+      <view class="overview-item">
+        <text class="overview-label">起始体重</text>
+        <view class="overview-value-wrap">
+          <text class="overview-value">{{startWeight || '--'}}</text>
+          <text class="overview-unit">kg</text>
+        </view>
+      </view>
+      
+      <view class="overview-divider"></view>
+      
+      <view class="overview-item">
+        <text class="overview-label">总变化</text>
+        <view class="overview-value-wrap">
+          <text class="overview-value {{totalChange < 0 ? 'decrease' : totalChange > 0 ? 'increase' : ''}}">
+            {{totalChange > 0 ? '+' : ''}}{{totalChange || '--'}}
+          </text>
+          <text class="overview-unit">kg</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 体重曲线图 -->
+  <view class="card chart-card animate-slide-up" style="animation-delay: 0.2s;">
+    <view class="card-title">
+      <text class="card-title-icon">📈</text>
+      <text>体重曲线</text>
+      <view class="chart-period-selector">
+        <view class="period-btn {{chartPeriod === '7' ? 'active' : ''}}" 
+              bindtap="changePeriod" data-period="7">7天</view>
+        <view class="period-btn {{chartPeriod === '30' ? 'active' : ''}}" 
+              bindtap="changePeriod" data-period="30">30天</view>
+        <view class="period-btn {{chartPeriod === 'all' ? 'active' : ''}}" 
+              bindtap="changePeriod" data-period="all">全部</view>
+      </view>
+    </view>
+
+    <view class="chart-container" wx:if="{{chartData.length > 0}}">
+      <!-- Y轴标签 -->
+      <view class="chart-y-axis">
+        <text class="y-label">{{chartMax}}</text>
+        <text class="y-label">{{chartMid}}</text>
+        <text class="y-label">{{chartMin}}</text>
+      </view>
+      
+      <!-- 图表主体 -->
+      <view class="chart-main">
+        <!-- 网格线 -->
+        <view class="chart-grid">
+          <view class="grid-line"></view>
+          <view class="grid-line"></view>
+          <view class="grid-line"></view>
+        </view>
+        
+        <!-- 数据点和连线 -->
+        <view class="chart-data">
+          <view class="chart-line-container">
+            <!-- SVG 连线 -->
+            <view class="chart-path" style="{{chartPathStyle}}"></view>
+          </view>
+          
+          <!-- 数据点 -->
+          <view class="data-point" 
+                wx:for="{{chartData}}" 
+                wx:key="index"
+                style="left: {{item.x}}%; bottom: {{item.y}}%;"
+                bindtap="showPointDetail"
+                data-index="{{index}}">
+            <view class="point-dot"></view>
+            <view class="point-tooltip {{selectedPoint === index ? 'show' : ''}}">
+              <text class="tooltip-weight">{{item.weight}}kg</text>
+              <text class="tooltip-date">{{item.shortDate}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:else class="empty-state">
+      <text class="empty-icon">📊</text>
+      <text class="empty-text">开始记录体重，查看你的进步曲线</text>
+    </view>
+  </view>
+
+  <!-- 周期统计 -->
+  <view class="card period-stats animate-slide-up" style="animation-delay: 0.3s;">
+    <view class="card-title">
+      <text class="card-title-icon">📊</text>
+      <text>数据统计</text>
+    </view>
+
+    <view class="stats-grid">
+      <view class="stat-box">
+        <text class="stat-box-label">本周变化</text>
+        <text class="stat-box-value {{weekChange < 0 ? 'decrease' : weekChange > 0 ? 'increase' : ''}}">
+          {{weekChange > 0 ? '+' : ''}}{{weekChange || '0'}} kg
+        </text>
+      </view>
+      
+      <view class="stat-box">
+        <text class="stat-box-label">本月变化</text>
+        <text class="stat-box-value {{monthChange < 0 ? 'decrease' : monthChange > 0 ? 'increase' : ''}}">
+          {{monthChange > 0 ? '+' : ''}}{{monthChange || '0'}} kg
+        </text>
+      </view>
+      
+      <view class="stat-box">
+        <text class="stat-box-label">平均体重</text>
+        <text class="stat-box-value">{{avgWeight || '--'}} kg</text>
+      </view>
+      
+      <view class="stat-box">
+        <text class="stat-box-label">最低体重</text>
+        <text class="stat-box-value text-success">{{minWeight || '--'}} kg</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 历史记录 -->
+  <view class="card history-card animate-slide-up" style="animation-delay: 0.4s;">
+    <view class="card-title">
+      <text class="card-title-icon">📅</text>
+      <text>历史记录</text>
+    </view>
+
+    <view wx:if="{{weightRecords.length > 0}}">
+      <view class="history-item" wx:for="{{displayRecords}}" wx:key="date">
+        <view class="history-date">
+          <text class="date-day">{{item.day}}</text>
+          <text class="date-month">{{item.month}}</text>
+        </view>
+        <view class="history-info">
+          <text class="history-weight">{{item.weight}} kg</text>
+          <text class="history-weekday">{{item.weekday}}</text>
+        </view>
+        <view class="history-change {{item.change < 0 ? 'decrease' : item.change > 0 ? 'increase' : ''}}">
+          {{item.change > 0 ? '+' : ''}}{{item.change}} kg
+        </view>
+        <view class="history-delete" bindtap="deleteRecord" data-date="{{item.date}}">
+          <text>×</text>
+        </view>
+      </view>
+      
+      <view class="load-more" wx:if="{{weightRecords.length > displayCount}}" bindtap="loadMore">
+        <text>加载更多</text>
+      </view>
+    </view>
+
+    <view wx:else class="empty-state">
+      <text class="empty-icon">📝</text>
+      <text class="empty-text">还没有体重记录</text>
+    </view>
+  </view>
+
+  <!-- 目标设置 -->
+  <view class="card goal-card animate-slide-up" style="animation-delay: 0.5s;">
+    <view class="card-title">
+      <text class="card-title-icon">🎯</text>
+      <text>目标体重</text>
+    </view>
+
+    <view class="goal-content">
+      <view class="goal-input-section" wx:if="{{!goalWeight}}">
+        <view class="input-group">
+          <input class="input" type="digit" placeholder="设置目标体重 (kg)"
+                 style="color:#ffffff;"
+                 placeholder-style="color:#6a6a7a;"
+                 value="{{goalInput}}" bindinput="onGoalInput"/>
+        </view>
+        <button class="btn btn-primary mt-20" bindtap="setGoal">设置目标</button>
+      </view>
+
+      <view class="goal-display" wx:else>
+        <view class="goal-progress">
+          <view class="progress-bar">
+            <view class="progress-fill" style="width: {{goalProgress}}%;"></view>
+          </view>
+          <view class="progress-labels">
+            <text>起始: {{startWeight}}kg</text>
+            <text>目标: {{goalWeight}}kg</text>
+          </view>
+        </view>
+        
+        <view class="goal-info">
+          <view class="goal-remaining">
+            <text class="remaining-label">距离目标还需</text>
+            <text class="remaining-value">{{goalRemaining}} kg</text>
+          </view>
+          <button class="btn btn-secondary" bindtap="resetGoal">重置目标</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

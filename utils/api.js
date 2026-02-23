@@ -1,5 +1,5 @@
 // utils/api.js — 后端 API 通信模块
-const BASE_URL = 'https://xckjsoft.cn';
+const BASE_URL = 'https://xckjsoft.cn/fitness-api';
 
 // ========== 通用请求封装 ==========
 

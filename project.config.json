@@ -1,7 +1,28 @@
 {
   "description": "项目配置文件",
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "server"
+      },
+      {
+        "type": "folder",
+        "value": "assets"
+      },
+      {
+        "type": "folder",
+        "value": "source-gifs"
+      },
+      {
+        "type": "file",
+        "value": "upload-cos.js"
+      },
+      {
+        "type": "file",
+        "value": "prepare-gif-assets.js"
+      }
+    ],
     "include": []
   },
   "setting": {

@@ -116,11 +116,11 @@
           loop
           muted
           controls
-          object-fit="contain"
+          object-fit="cover"
           show-center-play-btn="{{false}}"
           binderror="onExerciseVideoError"
         ></video>
-        <image wx:elif="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFit"></image>
+        <image wx:elif="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFill"></image>
         <view wx:else class="movement-figure">{{activeExercise.mark}}</view>
       </view>
 

@@ -40,7 +40,10 @@ Page({
   loadExercises() {
     api.getExercises()
       .then(data => {
-        this.applyExerciseData(data.exercises || [], data.membership || { level: 'free', active: false })
+        this.applyExerciseData(
+          this.resolveExerciseLibrary(data.exercises || []),
+          data.membership || { level: 'free', active: false }
+        )
       })
       .catch(() => {
         this.applyExerciseData(this.getExerciseLibrary(), { level: 'free', active: false })
@@ -49,6 +52,23 @@ Page({
 
   getExerciseLibrary() {
     return fallbackLibrary
+  },
+
+  resolveExerciseLibrary(apiExercises) {
+    if (!apiExercises || apiExercises.length < fallbackLibrary.length) {
+      return fallbackLibrary
+    }
+
+    const localById = fallbackLibrary.reduce((result, item) => {
+      result[item.id] = item
+      return result
+    }, {})
+
+    return apiExercises.map(item => ({
+      ...(localById[item.id] || {}),
+      ...item,
+      thumbPath: item.thumbPath || (localById[item.id] && localById[item.id].thumbPath) || ''
+    }))
   },
 
   applyExerciseData(exercises, membership) {

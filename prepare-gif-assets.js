@@ -19,6 +19,7 @@ const WIDTH = Number(process.env.VIDEO_WIDTH || 720);
 const CRF = Number(process.env.VIDEO_CRF || 28);
 const FPS = Number(process.env.VIDEO_FPS || 24);
 const PRESET = process.env.VIDEO_PRESET || 'medium';
+const THUMB_EXT = (process.env.THUMB_EXT || 'jpg').replace(/^\./, '').toLowerCase();
 const OVERWRITE = process.env.OVERWRITE === '1';
 
 function run(command, args) {
@@ -49,12 +50,18 @@ function readCatalog() {
   return JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf8'));
 }
 
-function findGif(exerciseId) {
+function findGif(exercise) {
   const candidates = [
-    path.join(SOURCE_DIR, `${exerciseId}.gif`),
-    path.join(SOURCE_DIR, exerciseId, 'demo.gif'),
-    path.join(SOURCE_DIR, exerciseId, `${exerciseId}.gif`)
+    path.join(SOURCE_DIR, `${exercise.id}.gif`),
+    path.join(SOURCE_DIR, exercise.id, 'demo.gif'),
+    path.join(SOURCE_DIR, exercise.id, `${exercise.id}.gif`)
   ];
+
+  if (exercise.sourceGroup && exercise.sourceName) {
+    candidates.push(path.join(SOURCE_DIR, exercise.sourceGroup, `${exercise.sourceName}.gif`));
+  }
+
+  candidates.push(path.join(SOURCE_DIR, `${exercise.name}.gif`));
 
   return candidates.find(file => fs.existsSync(file));
 }
@@ -73,6 +80,8 @@ function fileSize(file) {
 function convertGifToMp4(input, output) {
   run('ffmpeg', [
     '-hide_banner',
+    '-loglevel',
+    'error',
     '-y',
     '-i',
     input,
@@ -94,8 +103,11 @@ function convertGifToMp4(input, output) {
 }
 
 function makeThumbnail(input, output) {
-  run('ffmpeg', [
+  const ext = path.extname(output).toLowerCase();
+  const commonArgs = [
     '-hide_banner',
+    '-loglevel',
+    'error',
     '-y',
     '-ss',
     '0.2',
@@ -104,13 +116,15 @@ function makeThumbnail(input, output) {
     '-frames:v',
     '1',
     '-vf',
-    `scale='min(${WIDTH},iw)':-2:flags=lanczos`,
-    '-compression_level',
-    '6',
-    '-quality',
-    '75',
-    output
-  ]);
+    `scale='min(${WIDTH},iw)':-2:flags=lanczos`
+  ];
+
+  if (ext === '.webp') {
+    run('ffmpeg', commonArgs.concat(['-compression_level', '6', '-quality', '75', output]));
+    return;
+  }
+
+  run('ffmpeg', commonArgs.concat(['-q:v', '4', output]));
 }
 
 function main() {
@@ -126,11 +140,12 @@ function main() {
   console.log(`GIF source: ${SOURCE_DIR}`);
   console.log(`Assets output: ${ASSETS_DIR}`);
   console.log(`Video: width<=${WIDTH}, fps=${FPS}, crf=${CRF}, preset=${PRESET}`);
+  console.log(`Thumbnail: ${THUMB_EXT}`);
   console.log(`Overwrite: ${OVERWRITE ? 'yes' : 'no'}`);
   console.log('');
 
   for (const exercise of catalog) {
-    const gif = findGif(exercise.id);
+    const gif = findGif(exercise);
     if (!gif) {
       missing += 1;
       console.warn(`[missing] ${exercise.id}: put gif at source-gifs/${exercise.id}.gif`);
@@ -139,7 +154,7 @@ function main() {
 
     const outDir = path.join(ASSETS_DIR, exercise.id);
     const mp4 = path.join(outDir, 'demo.mp4');
-    const thumb = path.join(outDir, 'thumb.webp');
+    const thumb = path.join(outDir, exercise.thumbKey ? path.basename(exercise.thumbKey) : `thumb.${THUMB_EXT}`);
 
     if (!OVERWRITE && fs.existsSync(mp4) && fs.existsSync(thumb)) {
       skipped += 1;

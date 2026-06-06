@@ -80,7 +80,8 @@
             data-id="{{exercise.id}}"
           >
             <view class="movement-thumb">
-              <view class="movement-figure">{{exercise.mark}}</view>
+              <image wx:if="{{exercise.thumbUrl}}" class="movement-image" src="{{exercise.thumbUrl}}" mode="aspectFit"></image>
+              <view wx:else class="movement-figure">{{exercise.mark}}</view>
               <view wx:if="{{exercise.locked}}" class="lock-badge">Pro</view>
             </view>
             <view class="movement-info">

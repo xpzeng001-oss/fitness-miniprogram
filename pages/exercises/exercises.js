@@ -1,34 +1,19 @@
 const api = require('../../utils/api')
+const fallbackLibrary = require('./library')
+
+const MUSCLE_ORDER = ['胸', '背', '肩', '臂', '腿', '臀', '核心']
+const EQUIPMENT_ORDER = ['杠铃', '哑铃', '器械', '绳索', '史密斯', '弹力带', '壶铃', '自重', '双杠', '凳']
 
 Page({
   data: {
     membership: { level: 'free', active: false },
-    selectedMuscle: '胸',
+    selectedMuscle: '',
     selectedSubMuscle: '全部',
-    selectedEquipment: '杠铃',
+    selectedEquipment: '',
     searchVisible: false,
     searchKeyword: '',
-    muscleGroups: [
-      {
-        name: '胸',
-        count: 27,
-        expanded: true,
-        children: [
-          { name: '全部', count: 27 },
-          { name: '上胸', count: 7 },
-          { name: '中胸', count: 13 },
-          { name: '下胸', count: 5 },
-          { name: '胸内侧', count: 1 },
-          { name: '胸', count: 1 }
-        ]
-      },
-      { name: '背', count: 24, expanded: false, children: [] },
-      { name: '肩', count: 25, expanded: false, children: [] },
-      { name: '臂', count: 28, expanded: false, children: [] },
-      { name: '腿', count: 30, expanded: false, children: [] },
-      { name: '臀', count: 12, expanded: false, children: [] }
-    ],
-    equipmentGroups: ['杠铃', '哑铃', '器械', '绳索'],
+    muscleGroups: [],
+    equipmentGroups: [],
     exercises: [],
     groupedExercises: []
   },
@@ -46,40 +31,75 @@ Page({
   loadExercises() {
     api.getExercises()
       .then(data => {
-        this.setData({
-          membership: data.membership || { level: 'free', active: false },
-          exercises: data.exercises || []
-        })
-        this.updateVisibleExercises()
+        this.applyExerciseData(data.exercises || [], data.membership || { level: 'free', active: false })
       })
       .catch(() => {
-        this.setData({
-          exercises: this.getExerciseLibrary()
-        })
-        this.updateVisibleExercises()
+        this.applyExerciseData(this.getExerciseLibrary(), { level: 'free', active: false })
       })
   },
 
   getExerciseLibrary() {
-    return [
-      { id: 1, name: '杠铃卧推', muscle: '胸', subMuscle: '中胸为主', equipment: '杠铃', mark: '胸' },
-      { id: 2, name: '上斜杠铃卧推', muscle: '胸', subMuscle: '上胸', equipment: '杠铃', mark: '胸' },
-      { id: 3, name: '杠铃下斜卧推', muscle: '胸', subMuscle: '下胸', equipment: '杠铃', mark: '胸' },
-      { id: 4, name: '哑铃卧推', muscle: '胸', subMuscle: '中胸为主', equipment: '哑铃', mark: '胸' },
-      { id: 5, name: '上斜哑铃卧推', muscle: '胸', subMuscle: '上胸', equipment: '哑铃', mark: '胸' },
-      { id: 6, name: '坐姿推胸', muscle: '胸', subMuscle: '中胸为主', equipment: '器械', mark: '胸' },
-      { id: 7, name: '蝴蝶机夹胸', muscle: '胸', subMuscle: '胸内侧', equipment: '器械', mark: '胸' },
-      { id: 8, name: '绳索夹胸', muscle: '胸', subMuscle: '胸内侧', equipment: '绳索', mark: '胸' },
-      { id: 9, name: '高位下拉', muscle: '背', subMuscle: '背阔肌', equipment: '器械', mark: '背' },
-      { id: 10, name: '杠铃划船', muscle: '背', subMuscle: '中背', equipment: '杠铃', mark: '背' },
-      { id: 11, name: '哑铃划船', muscle: '背', subMuscle: '中背', equipment: '哑铃', mark: '背' },
-      { id: 12, name: '杠铃推举', muscle: '肩', subMuscle: '前束', equipment: '杠铃', mark: '肩' },
-      { id: 13, name: '哑铃侧平举', muscle: '肩', subMuscle: '中束', equipment: '哑铃', mark: '肩' },
-      { id: 14, name: '绳索下压', muscle: '臂', subMuscle: '肱三头肌', equipment: '绳索', mark: '臂' },
-      { id: 15, name: '杠铃深蹲', muscle: '腿', subMuscle: '股四头肌', equipment: '杠铃', mark: '腿' },
-      { id: 16, name: '腿举', muscle: '腿', subMuscle: '股四头肌', equipment: '器械', mark: '腿' },
-      { id: 17, name: '臀推', muscle: '臀', subMuscle: '臀大肌', equipment: '杠铃', mark: '臀' }
-    ]
+    return fallbackLibrary
+  },
+
+  applyExerciseData(exercises, membership) {
+    const filterState = this.buildFilterState(exercises, this.data.selectedMuscle, this.data.selectedEquipment)
+    this.setData({
+      membership,
+      exercises,
+      ...filterState
+    })
+    this.updateVisibleExercises()
+  },
+
+  buildFilterState(exercises, preferredMuscle, preferredEquipment) {
+    const muscleNames = this.sortByOrder([...new Set(exercises.map(item => item.muscle))], MUSCLE_ORDER)
+    const selectedMuscle = muscleNames.indexOf(preferredMuscle) !== -1 ? preferredMuscle : (muscleNames[0] || '')
+    const muscleItems = exercises.filter(item => item.muscle === selectedMuscle)
+    const equipmentNames = this.sortByOrder([...new Set(muscleItems.map(item => item.equipment))], EQUIPMENT_ORDER)
+    const selectedEquipment = equipmentNames.indexOf(preferredEquipment) !== -1 ? preferredEquipment : (equipmentNames[0] || '')
+
+    const muscleGroups = muscleNames.map(name => {
+      const list = exercises.filter(item => item.muscle === name)
+      const subCounts = list.reduce((result, item) => {
+        result[item.subMuscle] = (result[item.subMuscle] || 0) + 1
+        return result
+      }, {})
+      const children = [
+        { name: '全部', count: list.length },
+        ...Object.keys(subCounts)
+          .sort((a, b) => subCounts[b] - subCounts[a] || a.localeCompare(b, 'zh-Hans-CN'))
+          .map(sub => ({ name: sub, count: subCounts[sub] }))
+      ]
+
+      return {
+        name,
+        count: list.length,
+        expanded: name === selectedMuscle,
+        children
+      }
+    })
+
+    return {
+      selectedMuscle,
+      selectedSubMuscle: '全部',
+      selectedEquipment,
+      muscleGroups,
+      equipmentGroups: equipmentNames
+    }
+  },
+
+  sortByOrder(values, order) {
+    return values.sort((a, b) => {
+      const ai = order.indexOf(a)
+      const bi = order.indexOf(b)
+      if (ai !== -1 || bi !== -1) {
+        if (ai === -1) return 1
+        if (bi === -1) return -1
+        return ai - bi
+      }
+      return a.localeCompare(b, 'zh-Hans-CN')
+    })
   },
 
   toggleSearch() {
@@ -101,16 +121,9 @@ Page({
 
   selectMuscle(e) {
     const muscle = e.currentTarget.dataset.muscle
-    const muscleGroups = this.data.muscleGroups.map(group => ({
-      ...group,
-      expanded: group.name === muscle
-    }))
+    const filterState = this.buildFilterState(this.data.exercises, muscle, '')
 
-    this.setData({
-      selectedMuscle: muscle,
-      selectedSubMuscle: '全部',
-      muscleGroups
-    })
+    this.setData(filterState)
     this.updateVisibleExercises()
   },
 

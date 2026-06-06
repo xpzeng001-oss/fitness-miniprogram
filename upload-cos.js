@@ -37,7 +37,7 @@ const CONTENT_TYPES = {
 };
 
 function assertConfig() {
-  if (!SECRET_ID || !SECRET_KEY) {
+  if (!DRY_RUN && (!SECRET_ID || !SECRET_KEY)) {
     console.error('Missing COS_SECRET_ID or COS_SECRET_KEY.');
     console.error('Set them as temporary environment variables before running this script.');
     process.exit(1);
@@ -119,10 +119,12 @@ async function main() {
 
   const catalog = readCatalog();
   const items = collectUploadItems(catalog);
-  const cos = new COS({
-    SecretId: SECRET_ID,
-    SecretKey: SECRET_KEY
-  });
+  const cos = DRY_RUN
+    ? null
+    : new COS({
+      SecretId: SECRET_ID,
+      SecretKey: SECRET_KEY
+    });
 
   let uploaded = 0;
   let skipped = 0;

@@ -86,7 +86,7 @@ function isMember(user) {
 }
 
 function publicExercise(exercise, member) {
-  return {
+  const view = {
     id: exercise.id,
     name: exercise.name,
     muscle: exercise.muscle,
@@ -96,6 +96,12 @@ function publicExercise(exercise, member) {
     isPro: !!exercise.isPro,
     locked: !!exercise.isPro && !member
   };
+
+  if (exercise.thumbKey && (!exercise.isPro || member) && cos && COS_BUCKET && COS_REGION) {
+    view.thumbUrl = signCosUrl(exercise.thumbKey);
+  }
+
+  return view;
 }
 
 function signCosUrl(key) {

@@ -6,15 +6,15 @@
 
 ```text
 访问权限：私有读写
-示例 Bucket：fitness-exercises-prod-1250000000
+示例 Bucket：fitness-exercises-1318589271
 示例 Region：ap-guangzhou
 ```
 
 资源路径建议：
 
 ```text
-exercises/barbell-bench-press/thumb.webp
-exercises/barbell-bench-press/demo.mp4
+exercises/chest-001/thumb.jpg
+exercises/chest-001/demo.mp4
 ```
 
 ## 2. 环境变量
@@ -24,7 +24,7 @@ exercises/barbell-bench-press/demo.mp4
 ```env
 TENCENT_SECRET_ID=
 TENCENT_SECRET_KEY=
-TENCENT_COS_BUCKET=fitness-exercises-prod-1250000000
+TENCENT_COS_BUCKET=fitness-exercises-1318589271
 TENCENT_COS_REGION=ap-guangzhou
 COS_SIGN_EXPIRES=600
 ADMIN_SECRET=change_me_too
@@ -38,11 +38,11 @@ ADMIN_SECRET=change_me_too
 
 ```json
 {
-  "id": "barbell-bench-press",
-  "name": "杠铃卧推",
+  "id": "chest-001",
+  "name": "标准俯卧撑",
   "isPro": true,
-  "thumbKey": "exercises/barbell-bench-press/thumb.webp",
-  "videoKey": "exercises/barbell-bench-press/demo.mp4"
+  "thumbKey": "exercises/chest-001/thumb.jpg",
+  "videoKey": "exercises/chest-001/demo.mp4"
 }
 ```
 

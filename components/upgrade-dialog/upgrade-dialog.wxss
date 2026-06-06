@@ -15,7 +15,7 @@
 }
 
 .dialog-container {
-  background: #1a1a2e;
+  background: #1e1f23;
   border-radius: 32rpx;
   padding: 48rpx 40rpx;
   max-width: 600rpx;
@@ -30,11 +30,11 @@
   width: 48rpx;
   height: 48rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #999999;
+  color: #777b84;
   font-size: 32rpx;
 }
 
@@ -59,7 +59,7 @@
 
 .dialog-subtitle {
   font-size: 26rpx;
-  color: #999999;
+  color: #777b84;
   display: block;
 }
 
@@ -81,7 +81,7 @@
 .dialog-feature-text {
   flex: 1;
   font-size: 28rpx;
-  color: #cccccc;
+  color: #d4d6dc;
   line-height: 1.6;
 }
 
@@ -102,7 +102,7 @@
 
 .dialog-price-label {
   font-size: 26rpx;
-  color: #999999;
+  color: #777b84;
 }
 
 .dialog-price-value {
@@ -124,13 +124,13 @@
 
 .dialog-period {
   font-size: 24rpx;
-  color: #999999;
+  color: #777b84;
   margin-left: 4rpx;
 }
 
 .dialog-price-tip {
   font-size: 22rpx;
-  color: #999999;
+  color: #777b84;
   text-align: center;
   display: block;
 }
@@ -156,13 +156,13 @@
 .cancel-btn {
   padding: 24rpx;
   text-align: center;
-  color: #999999;
+  color: #777b84;
   font-size: 28rpx;
 }
 
 .dialog-social-proof {
   text-align: center;
   font-size: 22rpx;
-  color: #666666;
+  color: #777b84;
   display: block;
 }

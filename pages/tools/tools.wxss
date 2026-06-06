@@ -1,0 +1,166 @@
+.tools-container {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  padding: 40rpx;
+  padding-bottom: calc(126rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.tools-header {
+  display: flex;
+  align-items: center;
+  gap: 28rpx;
+  margin-bottom: 44rpx;
+}
+
+.back-button {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-mark {
+  color: var(--text-primary);
+  font-size: 64rpx;
+  line-height: 1;
+  margin-top: -6rpx;
+}
+
+.page-title {
+  color: var(--text-primary);
+  font-size: 56rpx;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+
+.tool-card {
+  min-height: 220rpx;
+  background: var(--bg-card);
+  border-radius: 24rpx;
+  padding: 34rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.tool-icon {
+  width: 58rpx;
+  height: 58rpx;
+  position: relative;
+  color: var(--text-primary);
+  margin-bottom: 28rpx;
+}
+
+.tool-title {
+  color: var(--text-primary);
+  font-size: 32rpx;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+}
+
+.tool-desc {
+  color: var(--text-muted);
+  font-size: 24rpx;
+  line-height: 1.25;
+}
+
+.body-head {
+  position: absolute;
+  left: 23rpx;
+  top: 0;
+  width: 12rpx;
+  height: 12rpx;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.body-torso {
+  position: absolute;
+  left: 19rpx;
+  top: 16rpx;
+  width: 20rpx;
+  height: 24rpx;
+  background: currentColor;
+  border-radius: 10rpx 10rpx 5rpx 5rpx;
+}
+
+.body-arm {
+  position: absolute;
+  top: 18rpx;
+  width: 8rpx;
+  height: 26rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.body-arm.left {
+  left: 9rpx;
+}
+
+.body-arm.right {
+  right: 9rpx;
+}
+
+.body-leg {
+  position: absolute;
+  top: 38rpx;
+  width: 8rpx;
+  height: 20rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.body-leg.left {
+  left: 19rpx;
+}
+
+.body-leg.right {
+  right: 19rpx;
+}
+
+.tool-dumbbell-bar {
+  position: absolute;
+  left: 12rpx;
+  right: 12rpx;
+  top: 27rpx;
+  height: 6rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.tool-dumbbell-plate {
+  position: absolute;
+  top: 17rpx;
+  width: 8rpx;
+  height: 26rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.tool-dumbbell-plate.left.outer {
+  left: 2rpx;
+}
+
+.tool-dumbbell-plate.left.inner {
+  left: 12rpx;
+}
+
+.tool-dumbbell-plate.right.inner {
+  right: 12rpx;
+}
+
+.tool-dumbbell-plate.right.outer {
+  right: 2rpx;
+}

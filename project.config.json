@@ -47,7 +47,7 @@
     "disableSWC": false
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.4",
+  "libVersion": "3.14.1",
   "appid": "wxb6f488d32d5d24dd",
   "projectname": "FitTracker Pro",
   "condition": {},

@@ -3,16 +3,16 @@
 .profile-container {
   min-height: 100vh;
   background: var(--bg-dark);
-  padding: 20rpx;
-  padding-bottom: 120rpx;
+  padding: 40rpx;
+  padding-bottom: calc(126rpx + env(safe-area-inset-bottom));
 }
 
 /* 1. 用户卡片 */
 .user-card {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255, 107, 53, 0.1) 100%);
+  background: var(--bg-card);
   border-radius: 24rpx;
   padding: 40rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 32rpx;
 }
 
 .user-header {
@@ -102,7 +102,7 @@
   background: var(--bg-card);
   border-radius: 24rpx;
   padding: 32rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 32rpx;
 }
 
 .section-header {
@@ -125,7 +125,7 @@
 }
 
 .stat-card {
-  background: var(--bg-card-light);
+  background: var(--bg-card);
   border-radius: 16rpx;
   padding: 24rpx;
   text-align: center;
@@ -148,51 +148,118 @@
 .achievements-section {
   background: var(--bg-card);
   border-radius: 24rpx;
-  padding: 32rpx;
-  margin-bottom: 24rpx;
+  padding: 42rpx 40rpx 40rpx;
+  margin-bottom: 32rpx;
+}
+
+.achievements-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 28rpx;
+  margin-bottom: 34rpx;
+}
+
+.achievement-mark {
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 4rpx;
+  border: 4rpx solid var(--text-primary);
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.achievement-mark-text {
+  color: var(--text-primary);
+  font-size: 28rpx;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.achievement-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement-heading {
+  display: block;
+  color: var(--text-primary);
+  font-size: 42rpx;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 14rpx;
 }
 
 .achievement-count {
   color: var(--text-muted);
-  font-size: 24rpx;
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.2;
+}
+
+.achievement-toggle {
+  min-width: 130rpx;
+  height: 58rpx;
+  padding: 0 24rpx;
+  border-radius: 34rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-size: 28rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  flex-shrink: 0;
+}
+
+.toggle-chevron {
+  width: 18rpx;
+  height: 18rpx;
+  border-right: 5rpx solid var(--text-primary);
+  border-bottom: 5rpx solid var(--text-primary);
+  transform: rotate(45deg);
+  margin-top: -6rpx;
+}
+
+.toggle-chevron.expanded {
+  transform: rotate(225deg);
+  margin-top: 6rpx;
 }
 
 .achievement-progress {
   display: flex;
   align-items: center;
   gap: 16rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 0;
 }
 
 .achievement-progress .progress-bar {
   flex: 1;
-  height: 12rpx;
-  background: var(--bg-card-light);
-  border-radius: 6rpx;
+  height: 16rpx;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999rpx;
   overflow: hidden;
 }
 
 .achievement-progress .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-  border-radius: 6rpx;
-}
-
-.progress-text {
-  color: var(--primary-color);
-  font-size: 24rpx;
-  font-weight: 600;
-  min-width: 60rpx;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 999rpx;
 }
 
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16rpx;
+  margin-top: 28rpx;
 }
 
 .achievement-card {
-  background: var(--bg-card-light);
+  background: var(--bg-card);
   border-radius: 16rpx;
   padding: 24rpx 16rpx;
   text-align: center;
@@ -200,7 +267,6 @@
 }
 
 .achievement-card.unlocked {
-  background: rgba(255, 107, 53, 0.1);
   border: 2rpx solid rgba(255, 107, 53, 0.3);
 }
 
@@ -235,16 +301,72 @@
   margin-top: 8rpx;
 }
 
-/* 4. 设置区 */
+/* 4. 工具入口 */
+.tools-entry {
+  background: var(--bg-card);
+  border-radius: 24rpx;
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+  display: flex;
+  align-items: center;
+  gap: 28rpx;
+}
+
+.tools-icon {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 20rpx;
+  background: var(--bg-card-light);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rpx;
+  padding: 18rpx;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.tools-dot {
+  background: var(--text-primary);
+  border-radius: 8rpx;
+}
+
+.tools-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.tools-title {
+  display: block;
+  color: var(--text-primary);
+  font-size: 34rpx;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+
+.tools-desc {
+  display: block;
+  color: var(--text-muted);
+  font-size: 26rpx;
+  line-height: 1.25;
+}
+
+.tools-arrow {
+  color: var(--text-muted);
+  font-size: 52rpx;
+  line-height: 1;
+}
+
+/* 5. 设置区 */
 .settings-section {
-  margin-bottom: 24rpx;
+  margin-bottom: 32rpx;
 }
 
 .setting-group {
   background: var(--bg-card);
   border-radius: 24rpx;
   overflow: hidden;
-  margin-bottom: 24rpx;
+  margin-bottom: 32rpx;
 }
 
 .setting-item {
@@ -294,7 +416,7 @@
   margin-bottom: 8rpx;
 }
 
-/* 5. 关于 */
+/* 6. 关于 */
 .about-section {
-  margin-bottom: 24rpx;
+  margin-bottom: 32rpx;
 }

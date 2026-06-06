@@ -1,0 +1,44 @@
+<view class="tabbar">
+  <view
+    wx:for="{{list}}"
+    wx:key="pagePath"
+    class="tabbar-item {{selected == index ? 'active' : ''}}"
+    data-index="{{index}}"
+    data-path="{{item.pagePath}}"
+    bindtap="switchTab"
+  >
+    <view class="sf-icon sf-{{item.icon}}">
+      <block wx:if="{{item.icon === 'home'}}">
+        <view class="home-roof"></view>
+        <view class="home-body">
+          <view class="home-door"></view>
+        </view>
+      </block>
+      <block wx:elif="{{item.icon === 'dumbbell'}}">
+        <view class="dumbbell-bar"></view>
+        <view class="dumbbell-plate left outer"></view>
+        <view class="dumbbell-plate left inner"></view>
+        <view class="dumbbell-plate right inner"></view>
+        <view class="dumbbell-plate right outer"></view>
+      </block>
+      <block wx:elif="{{item.icon === 'library'}}">
+        <view class="library-body"></view>
+        <view class="library-head"></view>
+        <view class="library-bar"></view>
+        <view class="library-arm left"></view>
+        <view class="library-arm right"></view>
+        <view class="library-plate left"></view>
+        <view class="library-plate right"></view>
+        <view class="library-leg left"></view>
+        <view class="library-leg right"></view>
+      </block>
+      <block wx:elif="{{item.icon === 'profile'}}">
+        <view class="profile-circle">
+          <view class="profile-head"></view>
+          <view class="profile-body"></view>
+        </view>
+      </block>
+    </view>
+    <text class="tabbar-text">{{item.text}}</text>
+  </view>
+</view>

@@ -78,7 +78,7 @@
         <text class="input-label">重量 (kg)</text>
         <input class="input" type="digit" placeholder="输入重量"
                style="color:#ffffff;"
-               placeholder-style="color:#6a6a7a;"
+               placeholder-style="color:#777b84;"
                value="{{weight}}" bindinput="onWeightInput"/>
       </view>
 
@@ -86,7 +86,7 @@
         <text class="input-label">次数</text>
         <input class="input" type="number" placeholder="输入次数"
                style="color:#ffffff;"
-               placeholder-style="color:#6a6a7a;"
+               placeholder-style="color:#777b84;"
                value="{{reps}}" bindinput="onRepsInput"/>
       </view>
 
@@ -94,7 +94,7 @@
         <text class="input-label">组数</text>
         <input class="input" type="number" placeholder="输入组数"
                style="color:#ffffff;"
-               placeholder-style="color:#6a6a7a;"
+               placeholder-style="color:#777b84;"
                value="{{sets}}" bindinput="onSetsInput"/>
       </view>
     </view>

@@ -30,7 +30,7 @@
         <text class="input-label">完成重量 (kg)</text>
         <input class="input input-lg" type="digit" placeholder="如 100"
                style="color:#ffffff;"
-               placeholder-style="color:#6a6a7a;"
+               placeholder-style="color:#777b84;"
                value="{{weight}}" bindinput="onWeightInput"/>
       </view>
 
@@ -38,7 +38,7 @@
         <text class="input-label">完成次数</text>
         <input class="input input-lg" type="number" placeholder="如 5"
                style="color:#ffffff;"
-               placeholder-style="color:#6a6a7a;"
+               placeholder-style="color:#777b84;"
                value="{{reps}}" bindinput="onRepsInput"/>
       </view>
     </view>

@@ -28,7 +28,7 @@
           <view class="weight-adjust" bindtap="adjustInputWeight" data-delta="-0.1">-</view>
           <input class="input weight-input" type="digit" placeholder="输入体重"
                  style="color:#ffffff;"
-                 placeholder-style="color:#6a6a7a;"
+                 placeholder-style="color:#777b84;"
                  value="{{inputWeight}}" bindinput="onWeightInput"/>
           <view class="weight-adjust" bindtap="adjustInputWeight" data-delta="0.1">+</view>
         </view>
@@ -230,7 +230,7 @@
         <view class="input-group">
           <input class="input" type="digit" placeholder="设置目标体重 (kg)"
                  style="color:#ffffff;"
-                 placeholder-style="color:#6a6a7a;"
+                 placeholder-style="color:#777b84;"
                  value="{{goalInput}}" bindinput="onGoalInput"/>
         </view>
         <button class="btn btn-primary mt-20" bindtap="setGoal">设置目标</button>

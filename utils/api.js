@@ -109,4 +109,43 @@ function clearData() {
   }).catch(() => {});
 }
 
-module.exports = { request, login, pushData, pushAll, pullAll, clearData };
+function getMembership() {
+  return request({
+    url: '/api/me/membership',
+    method: 'GET'
+  }).then(res => res.data && res.data.membership);
+}
+
+function getExercises() {
+  return request({
+    url: '/api/exercises',
+    method: 'GET'
+  }).then(res => res.data);
+}
+
+function getExerciseAssets(id) {
+  return request({
+    url: '/api/exercises/' + id + '/assets',
+    method: 'GET'
+  }).then(res => {
+    if (res.statusCode === 403) {
+      throw new Error('membership required');
+    }
+    if (res.statusCode !== 200) {
+      throw new Error((res.data && res.data.error) || 'assets failed');
+    }
+    return res.data;
+  });
+}
+
+module.exports = {
+  request,
+  login,
+  pushData,
+  pushAll,
+  pullAll,
+  clearData,
+  getMembership,
+  getExercises,
+  getExerciseAssets
+};

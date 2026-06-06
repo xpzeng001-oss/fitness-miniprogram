@@ -1,0 +1,52 @@
+[
+  {
+    "id": "barbell-bench-press",
+    "name": "杠铃卧推",
+    "muscle": "胸",
+    "subMuscle": "中胸为主",
+    "equipment": "杠铃",
+    "isPro": false,
+    "thumbKey": "exercises/barbell-bench-press/thumb.webp",
+    "videoKey": "exercises/barbell-bench-press/demo.mp4"
+  },
+  {
+    "id": "incline-barbell-bench-press",
+    "name": "上斜杠铃卧推",
+    "muscle": "胸",
+    "subMuscle": "上胸",
+    "equipment": "杠铃",
+    "isPro": false,
+    "thumbKey": "exercises/incline-barbell-bench-press/thumb.webp",
+    "videoKey": "exercises/incline-barbell-bench-press/demo.mp4"
+  },
+  {
+    "id": "decline-barbell-bench-press",
+    "name": "杠铃下斜卧推",
+    "muscle": "胸",
+    "subMuscle": "下胸",
+    "equipment": "杠铃",
+    "isPro": true,
+    "thumbKey": "exercises/decline-barbell-bench-press/thumb.webp",
+    "videoKey": "exercises/decline-barbell-bench-press/demo.mp4"
+  },
+  {
+    "id": "dumbbell-bench-press",
+    "name": "哑铃卧推",
+    "muscle": "胸",
+    "subMuscle": "中胸为主",
+    "equipment": "哑铃",
+    "isPro": false,
+    "thumbKey": "exercises/dumbbell-bench-press/thumb.webp",
+    "videoKey": "exercises/dumbbell-bench-press/demo.mp4"
+  },
+  {
+    "id": "cable-fly",
+    "name": "绳索夹胸",
+    "muscle": "胸",
+    "subMuscle": "胸内侧",
+    "equipment": "绳索",
+    "isPro": true,
+    "thumbKey": "exercises/cable-fly/thumb.webp",
+    "videoKey": "exercises/cable-fly/demo.mp4"
+  }
+]

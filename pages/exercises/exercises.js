@@ -226,6 +226,13 @@ Page({
     })
   },
 
+  onExerciseVideoError() {
+    wx.showToast({
+      title: '视频播放失败',
+      icon: 'none'
+    })
+  },
+
   buildExerciseDetail(exercise, extra) {
     const focusLabel = exercise.subMuscle.indexOf('为主') !== -1
       ? exercise.subMuscle

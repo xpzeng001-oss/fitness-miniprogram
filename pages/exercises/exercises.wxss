@@ -344,7 +344,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 20;
+  z-index: 2000;
   background: var(--bg-dark);
 }
 
@@ -365,7 +365,7 @@
   position: fixed;
   right: 34rpx;
   top: 96rpx;
-  z-index: 22;
+  z-index: 2002;
   width: 64rpx;
   height: 64rpx;
   border-radius: 50%;

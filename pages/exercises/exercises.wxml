@@ -118,6 +118,7 @@
           controls
           object-fit="contain"
           show-center-play-btn="{{false}}"
+          binderror="onExerciseVideoError"
         ></video>
         <image wx:elif="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFit"></image>
         <view wx:else class="movement-figure">{{activeExercise.mark}}</view>

@@ -5,6 +5,8 @@ const Database = require('better-sqlite3');
 const crypto = require('crypto');
 const https = require('https');
 const path = require('path');
+const COS = require('cos-nodejs-sdk-v5');
+const exerciseCatalog = require('./exercises.json');
 
 // 读取 .env
 require('fs').readFileSync(path.join(__dirname, '.env'), 'utf8')
@@ -17,6 +19,17 @@ const APP_ID = process.env.APP_ID;
 const APP_SECRET = process.env.APP_SECRET;
 const PORT = process.env.PORT || 3000;
 const TOKEN_SECRET = process.env.TOKEN_SECRET || 'default_secret';
+const ADMIN_SECRET = process.env.ADMIN_SECRET;
+const COS_BUCKET = process.env.TENCENT_COS_BUCKET;
+const COS_REGION = process.env.TENCENT_COS_REGION;
+const COS_SIGN_EXPIRES = Number(process.env.COS_SIGN_EXPIRES || 600);
+
+const cos = process.env.TENCENT_SECRET_ID && process.env.TENCENT_SECRET_KEY
+  ? new COS({
+      SecretId: process.env.TENCENT_SECRET_ID,
+      SecretKey: process.env.TENCENT_SECRET_KEY
+    })
+  : null;
 
 // ========== 数据库 ==========
 const db = new Database(path.join(__dirname, 'fitness.db'));
@@ -26,7 +39,9 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS users (
     openid TEXT PRIMARY KEY,
     created_at TEXT DEFAULT (datetime('now')),
-    last_login TEXT DEFAULT (datetime('now'))
+    last_login TEXT DEFAULT (datetime('now')),
+    membership_level TEXT DEFAULT 'free',
+    membership_expires_at TEXT
   );
   CREATE TABLE IF NOT EXISTS user_data (
     openid TEXT NOT NULL,
@@ -37,10 +52,24 @@ db.exec(`
   );
 `);
 
+function ensureColumn(table, column, definition) {
+  const exists = db.prepare(`PRAGMA table_info(${table})`).all().some(row => row.name === column);
+  if (!exists) db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+}
+
+ensureColumn('users', 'membership_level', "TEXT DEFAULT 'free'");
+ensureColumn('users', 'membership_expires_at', 'TEXT');
+
 const stmts = {
   upsertUser: db.prepare(`
     INSERT INTO users (openid) VALUES (?)
     ON CONFLICT(openid) DO UPDATE SET last_login = datetime('now')
+  `),
+  getUser: db.prepare('SELECT * FROM users WHERE openid = ?'),
+  setMembership: db.prepare(`
+    UPDATE users
+    SET membership_level = ?, membership_expires_at = ?
+    WHERE openid = ?
   `),
   getData: db.prepare('SELECT key, value FROM user_data WHERE openid = ?'),
   upsertData: db.prepare(`
@@ -49,6 +78,39 @@ const stmts = {
   `),
   deleteUserData: db.prepare('DELETE FROM user_data WHERE openid = ?'),
 };
+
+function isMember(user) {
+  if (!user || user.membership_level !== 'pro') return false;
+  if (!user.membership_expires_at) return true;
+  return new Date(user.membership_expires_at).getTime() > Date.now();
+}
+
+function publicExercise(exercise, member) {
+  return {
+    id: exercise.id,
+    name: exercise.name,
+    muscle: exercise.muscle,
+    subMuscle: exercise.subMuscle,
+    equipment: exercise.equipment,
+    mark: exercise.mark || exercise.muscle,
+    isPro: !!exercise.isPro,
+    locked: !!exercise.isPro && !member
+  };
+}
+
+function signCosUrl(key) {
+  if (!cos || !COS_BUCKET || !COS_REGION) {
+    throw new Error('COS is not configured');
+  }
+
+  return cos.getObjectUrl({
+    Bucket: COS_BUCKET,
+    Region: COS_REGION,
+    Key: key,
+    Sign: true,
+    Expires: COS_SIGN_EXPIRES
+  });
+}
 
 // ========== Token ==========
 function makeToken(openid) {
@@ -99,6 +161,14 @@ function auth(req, res, next) {
   next();
 }
 
+function adminAuth(req, res, next) {
+  const secret = req.headers['x-admin-secret'];
+  if (!ADMIN_SECRET || secret !== ADMIN_SECRET) {
+    return res.status(401).json({ error: 'admin unauthorized' });
+  }
+  next();
+}
+
 // POST /api/login
 app.post('/api/login', async (req, res) => {
   const { code } = req.body;
@@ -131,6 +201,66 @@ app.get('/api/data', auth, (req, res) => {
     catch { data[row.key] = row.value; }
   });
   res.json({ data });
+});
+
+// GET /api/me/membership — 当前用户会员状态
+app.get('/api/me/membership', auth, (req, res) => {
+  const user = stmts.getUser.get(req.openid);
+  res.json({
+    membership: {
+      level: user?.membership_level || 'free',
+      expiresAt: user?.membership_expires_at || null,
+      active: isMember(user)
+    }
+  });
+});
+
+// GET /api/exercises — 动作库列表。非会员能看到 Pro 锁定状态，但不返回资源 URL。
+app.get('/api/exercises', auth, (req, res) => {
+  const user = stmts.getUser.get(req.openid);
+  const member = isMember(user);
+  res.json({
+    membership: {
+      level: user?.membership_level || 'free',
+      expiresAt: user?.membership_expires_at || null,
+      active: member
+    },
+    exercises: exerciseCatalog.map(exercise => publicExercise(exercise, member))
+  });
+});
+
+// GET /api/exercises/:id/assets — 校验会员后签发 COS 临时 URL。
+app.get('/api/exercises/:id/assets', auth, (req, res) => {
+  const exercise = exerciseCatalog.find(item => item.id === req.params.id);
+  if (!exercise) return res.status(404).json({ error: 'exercise not found' });
+
+  const user = stmts.getUser.get(req.openid);
+  if (exercise.isPro && !isMember(user)) {
+    return res.status(403).json({ error: 'membership required' });
+  }
+
+  try {
+    res.json({
+      id: exercise.id,
+      thumbUrl: signCosUrl(exercise.thumbKey),
+      videoUrl: exercise.videoKey ? signCosUrl(exercise.videoKey) : null,
+      expiresIn: COS_SIGN_EXPIRES
+    });
+  } catch (err) {
+    console.error('cos sign error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /api/admin/membership — 临时人工开通会员，接支付前使用。
+app.post('/api/admin/membership', adminAuth, (req, res) => {
+  const { openid, level = 'pro', expiresAt = null } = req.body;
+  if (!openid) return res.status(400).json({ error: 'openid required' });
+
+  const result = stmts.setMembership.run(level, expiresAt, openid);
+  if (result.changes === 0) return res.status(404).json({ error: 'user not found' });
+
+  res.json({ ok: true, openid, level, expiresAt });
 });
 
 // PUT /api/data — 推送所有数据

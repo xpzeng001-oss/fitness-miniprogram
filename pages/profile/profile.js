@@ -9,8 +9,9 @@ Page({
     settings: {},
     displayAchievements: [],
     unlockedCount: 0,
-    totalCount: 20,
+    totalCount: ACHIEVEMENTS.length,
     achievementProgress: 0,
+    achievementsExpanded: false,
     totalVolumeTons: 0,
     storageSize: 0
   },
@@ -22,6 +23,9 @@ Page({
   },
 
   onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({ selected: 2 })
+    }
     this.loadUserData()
     app.checkAchievements()
     this.loadAchievements()
@@ -82,6 +86,7 @@ Page({
     this.setData({
       displayAchievements,
       unlockedCount,
+      totalCount: ACHIEVEMENTS.length,
       achievementProgress
     })
   },
@@ -162,6 +167,12 @@ Page({
     }
   },
 
+  toggleAchievements() {
+    this.setData({
+      achievementsExpanded: !this.data.achievementsExpanded
+    })
+  },
+
   getAchievementProgress(achievement) {
     const { statistics } = this.data
     const { condition } = achievement
@@ -181,6 +192,12 @@ Page({
 
   editProfile() {
     this.editNickname()
+  },
+
+  openTools() {
+    wx.navigateTo({
+      url: '/pages/tools/tools'
+    })
   },
 
   changeUnit() {

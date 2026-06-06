@@ -1,39 +1,35 @@
 {
   "pages": [
-    "pages/workout/workout",
+    "pages/index/index",
+    "pages/exercises/exercises",
+    "pages/tools/tools",
     "pages/calculator/calculator",
     "pages/weight/weight",
-    "pages/profile/profile",
-    "pages/index/index"
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarBackgroundColor": "#141519",
     "navigationBarTitleText": "FitTracker",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#0f0f1a"
+    "backgroundColor": "#141519"
   },
   "tabBar": {
+    "custom": true,
     "color": "#8a8a9a",
     "selectedColor": "#ff6b35",
-    "backgroundColor": "#1a1a2e",
+    "backgroundColor": "#1e1f23",
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/workout/workout",
-        "text": "训练",
+        "pagePath": "pages/index/index",
+        "text": "家",
         "iconPath": "images/workout.png",
         "selectedIconPath": "images/workout-active.png"
       },
       {
-        "pagePath": "pages/calculator/calculator",
-        "text": "计算",
-        "iconPath": "images/calc.png",
-        "selectedIconPath": "images/calc-active.png"
-      },
-      {
-        "pagePath": "pages/weight/weight",
-        "text": "体重",
+        "pagePath": "pages/exercises/exercises",
+        "text": "动作库",
         "iconPath": "images/weight.png",
         "selectedIconPath": "images/weight-active.png"
       },

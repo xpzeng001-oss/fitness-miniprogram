@@ -51,19 +51,27 @@
 
   <!-- 3. 成就墙 -->
   <view class="achievements-section">
-    <view class="section-header">
-      <text class="section-title">🏆 我的成就</text>
-      <text class="achievement-count">({{unlockedCount}}/{{totalCount}} 已解锁)</text>
+    <view class="achievements-summary">
+      <view class="achievement-mark">
+        <text class="achievement-mark-text">?</text>
+      </view>
+      <view class="achievement-main">
+        <text class="achievement-heading">我的成就</text>
+        <text class="achievement-count">{{unlockedCount}}/{{totalCount}} 已解锁</text>
+      </view>
+      <view class="achievement-toggle" bindtap="toggleAchievements">
+        <text>{{achievementsExpanded ? '收起' : '展开'}}</text>
+        <view class="toggle-chevron {{achievementsExpanded ? 'expanded' : ''}}"></view>
+      </view>
     </view>
 
     <view class="achievement-progress">
       <view class="progress-bar">
         <view class="progress-fill" style="width: {{achievementProgress}}%"></view>
       </view>
-      <text class="progress-text">{{achievementProgress}}%</text>
     </view>
 
-    <view class="achievements-grid">
+    <view wx:if="{{achievementsExpanded}}" class="achievements-grid">
       <view
         wx:for="{{displayAchievements}}"
         wx:key="id"
@@ -79,7 +87,22 @@
     </view>
   </view>
 
-  <!-- 4. 设置区 -->
+  <!-- 4. 工具入口 -->
+  <view class="tools-entry" bindtap="openTools">
+    <view class="tools-icon">
+      <view class="tools-dot"></view>
+      <view class="tools-dot"></view>
+      <view class="tools-dot"></view>
+      <view class="tools-dot"></view>
+    </view>
+    <view class="tools-main">
+      <text class="tools-title">工具</text>
+      <text class="tools-desc">身材打卡、1RM</text>
+    </view>
+    <text class="tools-arrow">›</text>
+  </view>
+
+  <!-- 5. 设置区 -->
   <view class="settings-section">
     <view class="section-header">
       <text class="section-title">⚙️ 设置</text>
@@ -118,7 +141,7 @@
     </view>
   </view>
 
-  <!-- 5. 关于 -->
+  <!-- 6. 关于 -->
   <view class="about-section">
     <view class="setting-group">
       <view class="setting-item" bindtap="showAbout">

@@ -1,6 +1,5 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <!-- 头部欢迎区域 -->
   <view class="header animate-fade-in">
     <view class="greeting">
       <text class="greeting-text">{{greeting}}</text>
@@ -9,16 +8,15 @@
     <view class="date-display">{{currentDate}}</view>
   </view>
 
-  <!-- 今日统计卡片 -->
   <view class="stats-card card animate-slide-up">
     <view class="stats-header">
       <text class="stats-title">今日概览</text>
-      <view class="streak-badge" wx:if="{{streakDays > 0}}">
+      <view class="streak-badge" wx:if="{{checkinStreak > 0}}">
         <text class="streak-fire">🔥</text>
-        <text class="streak-text">连续{{streakDays}}天</text>
+        <text class="streak-text">连续{{checkinStreak}}天</text>
       </view>
     </view>
-    
+
     <view class="stats-grid">
       <view class="stat-item">
         <view class="stat-value text-primary">{{todayWorkouts}}</view>
@@ -37,29 +35,149 @@
     </view>
   </view>
 
-  <!-- 快捷操作 -->
-  <view class="quick-actions">
-    <view class="action-btn" bindtap="goToWorkout">
-      <view class="action-icon">🏋️</view>
-      <view class="action-text">记录训练</view>
+  <view class="card checkin-card animate-slide-up">
+    <view class="checkin-header" bindtap="toggleCheckinCalendar">
+      <view class="checkin-left">
+        <text class="card-title-icon">📅</text>
+        <text class="checkin-title">训练打卡</text>
+        <text class="checkin-streak" wx:if="{{checkinStreak > 0}}">🔥 连续{{checkinStreak}}天</text>
+      </view>
+      <view class="checkin-right">
+        <view class="checkin-btn {{todayCheckedIn ? 'checked' : ''}}" catchtap="doCheckin">
+          <text>{{todayCheckedIn ? '✓ 已打卡' : '打卡'}}</text>
+        </view>
+        <text class="expand-arrow {{showCalendar ? 'expanded' : ''}}">▼</text>
+      </view>
     </view>
-    <view class="action-btn" bindtap="goToCalculator">
-      <view class="action-icon">🧮</view>
-      <view class="action-text">1RM计算</view>
-    </view>
-    <view class="action-btn" bindtap="goToWeight">
-      <view class="action-icon">⚖️</view>
-      <view class="action-text">体重打卡</view>
+
+    <view class="checkin-calendar {{showCalendar ? 'show' : ''}}">
+      <view class="calendar-nav">
+        <text class="nav-btn" bindtap="prevMonth">◀</text>
+        <text class="calendar-month">{{calendarYear}}年{{calendarMonth}}月</text>
+        <text class="nav-btn" bindtap="nextMonth">▶</text>
+      </view>
+      <view class="calendar-weekdays">
+        <text class="weekday">日</text>
+        <text class="weekday">一</text>
+        <text class="weekday">二</text>
+        <text class="weekday">三</text>
+        <text class="weekday">四</text>
+        <text class="weekday">五</text>
+        <text class="weekday">六</text>
+      </view>
+      <view class="calendar-days">
+        <view
+          wx:for="{{calendarDays}}"
+          wx:key="index"
+          class="calendar-day {{item.isCurrentMonth ? '' : 'other-month'}} {{item.isToday ? 'today' : ''}} {{item.hasCheckin ? 'checkin-day' : ''}}"
+        >
+          <text class="day-text">{{item.day}}</text>
+          <view wx:if="{{item.hasCheckin}}" class="checkin-dot"></view>
+        </view>
+      </view>
+      <view class="calendar-summary">
+        <text class="summary-text">本月打卡 {{monthCheckinCount}} 天</text>
+      </view>
     </view>
   </view>
 
-  <!-- 最近PR记录 -->
+  <view class="card form-card animate-slide-up">
+    <view class="card-title">
+      <text class="card-title-icon">➕</text>
+      <text>添加记录</text>
+    </view>
+
+    <view class="input-group">
+      <text class="input-label">选择动作</text>
+      <picker bindchange="onExerciseChange" value="{{exerciseIndex}}" range="{{exerciseNames}}">
+        <view class="picker-btn">
+          <text class="picker-value">{{selectedExercise || '请选择训练动作'}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-row">
+      <view class="input-group flex-1">
+        <text class="input-label">重量 (kg)</text>
+        <input class="input" type="digit" placeholder="输入重量"
+               style="color:#ffffff;"
+               placeholder-style="color:#777b84;"
+               value="{{weight}}" bindinput="onWeightInput"/>
+      </view>
+
+      <view class="input-group flex-1 ml-20">
+        <text class="input-label">次数</text>
+        <input class="input" type="number" placeholder="输入次数"
+               style="color:#ffffff;"
+               placeholder-style="color:#777b84;"
+               value="{{reps}}" bindinput="onRepsInput"/>
+      </view>
+
+      <view class="input-group flex-1 ml-20">
+        <text class="input-label">组数</text>
+        <input class="input" type="number" placeholder="输入组数"
+               style="color:#ffffff;"
+               placeholder-style="color:#777b84;"
+               value="{{sets}}" bindinput="onSetsInput"/>
+      </view>
+    </view>
+
+    <view class="pr-hint" wx:if="{{isPR}}">
+      <text class="pr-hint-icon">🎉</text>
+      <text class="pr-hint-text">新PR！超越了之前的 {{currentPR}}kg</text>
+    </view>
+
+    <button class="btn btn-primary btn-block mt-30" bindtap="addRecord">
+      <text>记录训练</text>
+    </button>
+  </view>
+
   <view class="card animate-slide-up" style="animation-delay: 0.1s;">
+    <view class="card-title">
+      <text class="card-title-icon">📋</text>
+      <text>今日记录</text>
+      <text class="record-count">{{todayRecords.length}}组</text>
+    </view>
+
+    <view wx:if="{{todayRecords.length > 0}}">
+      <view class="record-item" wx:for="{{todayRecords}}" wx:key="index">
+        <view class="record-main">
+          <view class="record-exercise">
+            <text class="exercise-icon">{{item.icon}}</text>
+            <text class="exercise-name">{{item.exercise}}</text>
+            <view class="pr-badge" wx:if="{{item.isPR}}">PR</view>
+          </view>
+          <view class="record-detail">
+            <text class="detail-weight">{{item.weight}}kg</text>
+            <text class="detail-sep">×</text>
+            <text class="detail-reps">{{item.reps}}次</text>
+            <text class="detail-sep">×</text>
+            <text class="detail-sets">{{item.sets}}组</text>
+          </view>
+        </view>
+        <view class="record-volume">
+          <text class="volume-value">{{item.volume}}</text>
+          <text class="volume-label">容量</text>
+        </view>
+        <view class="record-delete" bindtap="deleteRecord" data-index="{{index}}">
+          <text>×</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:else class="empty-state">
+      <text class="empty-icon">🏃</text>
+      <text class="empty-text">今天还没有训练记录</text>
+    </view>
+  </view>
+
+  <view class="card animate-slide-up" style="animation-delay: 0.2s;">
     <view class="card-title">
       <text class="card-title-icon">🏆</text>
       <text>最近PR</text>
     </view>
-    
+
     <view wx:if="{{recentPRs.length > 0}}">
       <view class="pr-item" wx:for="{{recentPRs}}" wx:key="index">
         <view class="pr-info">
@@ -72,20 +190,19 @@
         </view>
       </view>
     </view>
-    
+
     <view wx:else class="empty-state">
       <text class="empty-icon">🎯</text>
       <text class="empty-text">还没有PR记录，开始训练吧！</text>
     </view>
   </view>
 
-  <!-- 体重趋势预览 -->
-  <view class="card animate-slide-up" style="animation-delay: 0.2s;">
+  <view class="card animate-slide-up" style="animation-delay: 0.3s;">
     <view class="card-title">
       <text class="card-title-icon">📊</text>
       <text>体重趋势</text>
     </view>
-    
+
     <view wx:if="{{weightData.length > 0}}" class="weight-preview">
       <view class="weight-current">
         <text class="weight-value">{{currentWeight}}</text>
@@ -95,37 +212,20 @@
         <text>{{weightChange >= 0 ? '+' : ''}}{{weightChange}} kg</text>
         <text class="weight-period">较上周</text>
       </view>
-      
-      <!-- 简易图表 -->
+
       <view class="mini-chart">
-        <view class="chart-bar" 
-              wx:for="{{weightData}}" 
-              wx:key="index"
-              style="height: {{item.height}}%;">
-        </view>
+        <view
+          class="chart-bar"
+          wx:for="{{weightData}}"
+          wx:key="index"
+          style="height: {{item.height}}%;"
+        ></view>
       </view>
     </view>
-    
+
     <view wx:else class="empty-state">
       <text class="empty-icon">📈</text>
       <text class="empty-text">开始记录体重，追踪你的进步</text>
-    </view>
-  </view>
-
-  <!-- 今日打卡状态 -->
-  <view class="checkin-card card animate-slide-up" style="animation-delay: 0.3s;">
-    <view class="checkin-content">
-      <view class="checkin-info">
-        <text class="checkin-title">今日打卡</text>
-        <text class="checkin-status {{todayCheckin ? 'done' : ''}}">
-          {{todayCheckin ? '已完成 ✓' : '未完成'}}
-        </text>
-      </view>
-      <button class="btn {{todayCheckin ? 'btn-secondary' : 'btn-success'}}" 
-              bindtap="quickCheckin"
-              disabled="{{todayCheckin}}">
-        {{todayCheckin ? '已打卡' : '立即打卡'}}
-      </button>
     </view>
   </view>
 </view>

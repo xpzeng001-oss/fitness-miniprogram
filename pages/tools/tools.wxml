@@ -1,0 +1,35 @@
+<view class="tools-container">
+  <view class="tools-header">
+    <view class="back-button" bindtap="goBack">
+      <text class="back-mark">‹</text>
+    </view>
+    <text class="page-title">工具</text>
+  </view>
+
+  <view class="tools-grid">
+    <view class="tool-card" bindtap="openWeight">
+      <view class="tool-icon body-icon">
+        <view class="body-head"></view>
+        <view class="body-torso"></view>
+        <view class="body-arm left"></view>
+        <view class="body-arm right"></view>
+        <view class="body-leg left"></view>
+        <view class="body-leg right"></view>
+      </view>
+      <text class="tool-title">身材打卡</text>
+      <text class="tool-desc">记录体重阶段变化</text>
+    </view>
+
+    <view class="tool-card" bindtap="openCalculator">
+      <view class="tool-icon dumbbell-icon">
+        <view class="tool-dumbbell-bar"></view>
+        <view class="tool-dumbbell-plate left outer"></view>
+        <view class="tool-dumbbell-plate left inner"></view>
+        <view class="tool-dumbbell-plate right inner"></view>
+        <view class="tool-dumbbell-plate right outer"></view>
+      </view>
+      <text class="tool-title">1RM 计算器</text>
+      <text class="tool-desc">估算最大力量</text>
+    </view>
+  </view>
+</view>

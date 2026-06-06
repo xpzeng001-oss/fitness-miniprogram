@@ -1,0 +1,103 @@
+<view class="exercise-page">
+  <view class="library-header">
+    <text class="library-title">动作库</text>
+    <view class="search-button" bindtap="toggleSearch">
+      <view class="search-glass"></view>
+    </view>
+  </view>
+
+  <view wx:if="{{searchVisible}}" class="search-panel">
+    <input
+      class="search-input"
+      placeholder="搜索动作"
+      placeholder-style="color:#777b84;"
+      value="{{searchKeyword}}"
+      bindinput="onSearchInput"
+      focus="{{searchVisible}}"
+    />
+  </view>
+
+  <view class="library-content">
+    <scroll-view class="muscle-sidebar" scroll-y>
+      <text class="sidebar-label">一级肌群</text>
+      <view
+        wx:for="{{muscleGroups}}"
+        wx:key="name"
+        class="muscle-panel {{item.expanded ? 'expanded' : ''}}"
+        bindtap="selectMuscle"
+        data-muscle="{{item.name}}"
+      >
+        <view class="muscle-header">
+          <view>
+            <text class="muscle-name">{{item.name}}</text>
+            <text class="muscle-count">{{item.count}} 个动作</text>
+          </view>
+          <text class="muscle-chevron">{{item.expanded ? '⌃' : '⌄'}}</text>
+        </view>
+
+        <view wx:if="{{item.expanded}}" class="sub-muscle-list" catchtap="noop">
+          <view
+            wx:for="{{item.children}}"
+            wx:key="name"
+            wx:for-item="sub"
+            class="sub-muscle {{selectedSubMuscle === sub.name ? 'active' : ''}}"
+            bindtap="selectSubMuscle"
+            data-sub="{{sub.name}}"
+          >
+            <text class="sub-dot"></text>
+            <text class="sub-name">{{sub.name}}</text>
+            <text class="sub-count">{{sub.count}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <scroll-view class="exercise-main" scroll-y>
+      <text class="section-label">器械分组</text>
+      <scroll-view class="equipment-scroll" scroll-x enable-flex>
+        <view class="equipment-tabs">
+          <view
+            wx:for="{{equipmentGroups}}"
+            wx:key="*this"
+            class="equipment-tab {{selectedEquipment === item ? 'active' : ''}}"
+            bindtap="selectEquipment"
+            data-equipment="{{item}}"
+          >
+            {{item}}
+          </view>
+        </view>
+      </scroll-view>
+
+      <view wx:if="{{groupedExercises.length > 0}}">
+        <view wx:for="{{groupedExercises}}" wx:key="equipment" class="exercise-section">
+          <text class="equipment-title">{{item.equipment}}</text>
+          <view
+            wx:for="{{item.list}}"
+            wx:key="id"
+            wx:for-item="exercise"
+            class="movement-card {{exercise.locked ? 'locked' : ''}}"
+            bindtap="openExercise"
+            data-id="{{exercise.id}}"
+          >
+            <view class="movement-thumb">
+              <view class="movement-figure">{{exercise.mark}}</view>
+              <view wx:if="{{exercise.locked}}" class="lock-badge">Pro</view>
+            </view>
+            <view class="movement-info">
+              <text class="movement-name">{{exercise.name}}</text>
+              <view class="movement-tags">
+                <text class="movement-tag primary">{{exercise.subMuscle}}</text>
+                <text class="movement-tag">{{exercise.equipment}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view wx:else class="empty-library">
+        <text class="empty-title">没有匹配动作</text>
+        <text class="empty-desc">换个肌群、器械或搜索词试试</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

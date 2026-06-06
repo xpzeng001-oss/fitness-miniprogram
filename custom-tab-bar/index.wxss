@@ -1,0 +1,235 @@
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  height: calc(78rpx + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #1e1f23;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 -12rpx 32rpx rgba(0, 0, 0, 0.34);
+  display: flex;
+}
+
+.tabbar-item {
+  flex: 1;
+  min-width: 0;
+  height: 78rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #8a8a9a;
+  transform: translateY(16rpx);
+}
+
+.sf-icon {
+  width: 46rpx;
+  height: 46rpx;
+  margin-bottom: 6rpx;
+  position: relative;
+  color: currentColor;
+}
+
+.tabbar-text {
+  font-size: 20rpx;
+  line-height: 1.2;
+  color: currentColor;
+}
+
+.tabbar-item.active {
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.home-roof {
+  position: absolute;
+  left: 10rpx;
+  top: 7rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background: currentColor;
+  border-radius: 5rpx;
+  transform: rotate(45deg);
+}
+
+.home-body {
+  position: absolute;
+  left: 11rpx;
+  top: 20rpx;
+  width: 26rpx;
+  height: 22rpx;
+  background: currentColor;
+  border-radius: 5rpx 5rpx 8rpx 8rpx;
+}
+
+.home-door {
+  position: absolute;
+  left: 10rpx;
+  bottom: 0;
+  width: 7rpx;
+  height: 12rpx;
+  background: #1e1f23;
+  border-radius: 4rpx 4rpx 0 0;
+}
+
+.tabbar-item.active .home-door {
+  background: currentColor;
+}
+
+.dumbbell-bar {
+  position: absolute;
+  left: 10rpx;
+  right: 10rpx;
+  top: 24rpx;
+  height: 5rpx;
+  border-radius: 999rpx;
+  background: currentColor;
+}
+
+.dumbbell-plate {
+  position: absolute;
+  top: 14rpx;
+  width: 6rpx;
+  height: 25rpx;
+  border-radius: 999rpx;
+  background: currentColor;
+}
+
+.dumbbell-plate.left.outer {
+  left: 4rpx;
+}
+
+.dumbbell-plate.left.inner {
+  left: 13rpx;
+}
+
+.dumbbell-plate.right.inner {
+  right: 13rpx;
+}
+
+.dumbbell-plate.right.outer {
+  right: 4rpx;
+}
+
+.library-body {
+  position: absolute;
+  left: 18rpx;
+  top: 16rpx;
+  width: 12rpx;
+  height: 18rpx;
+  background: currentColor;
+  border-radius: 6rpx 6rpx 3rpx 3rpx;
+}
+
+.library-head {
+  position: absolute;
+  left: 19rpx;
+  top: 5rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.library-bar {
+  position: absolute;
+  left: 6rpx;
+  right: 6rpx;
+  top: 22rpx;
+  height: 4rpx;
+  border-radius: 999rpx;
+  background: currentColor;
+}
+
+.library-arm {
+  position: absolute;
+  top: 22rpx;
+  width: 12rpx;
+  height: 5rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.library-arm.left {
+  left: 10rpx;
+  transform: rotate(-65deg);
+}
+
+.library-arm.right {
+  right: 10rpx;
+  transform: rotate(65deg);
+}
+
+.library-plate {
+  position: absolute;
+  top: 18rpx;
+  width: 5rpx;
+  height: 12rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.library-plate.left {
+  left: 2rpx;
+}
+
+.library-plate.right {
+  right: 2rpx;
+}
+
+.library-leg {
+  position: absolute;
+  top: 32rpx;
+  width: 5rpx;
+  height: 11rpx;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.library-leg.left {
+  left: 16rpx;
+  transform: rotate(12deg);
+}
+
+.library-leg.right {
+  right: 16rpx;
+  transform: rotate(-12deg);
+}
+
+.profile-circle {
+  position: absolute;
+  left: 3rpx;
+  top: 1rpx;
+  width: 42rpx;
+  height: 42rpx;
+  background: currentColor;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-head {
+  position: absolute;
+  left: 15rpx;
+  top: 8rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #1e1f23;
+}
+
+.profile-body {
+  position: absolute;
+  left: 8rpx;
+  top: 25rpx;
+  width: 26rpx;
+  height: 16rpx;
+  border-radius: 16rpx 16rpx 4rpx 4rpx;
+  background: #1e1f23;
+}
+
+.tabbar-item.active .profile-head,
+.tabbar-item.active .profile-body {
+  background: currentColor;
+}

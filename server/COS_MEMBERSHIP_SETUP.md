@@ -1,0 +1,73 @@
+# COS 会员动作库配置
+
+## 1. 存储桶
+
+建议创建腾讯云 COS 私有桶：
+
+```text
+访问权限：私有读写
+示例 Bucket：fitness-exercises-prod-1250000000
+示例 Region：ap-guangzhou
+```
+
+资源路径建议：
+
+```text
+exercises/barbell-bench-press/thumb.webp
+exercises/barbell-bench-press/demo.mp4
+```
+
+## 2. 环境变量
+
+复制 `.env.example` 到 `.env`，补充：
+
+```env
+TENCENT_SECRET_ID=
+TENCENT_SECRET_KEY=
+TENCENT_COS_BUCKET=fitness-exercises-prod-1250000000
+TENCENT_COS_REGION=ap-guangzhou
+COS_SIGN_EXPIRES=600
+ADMIN_SECRET=change_me_too
+```
+
+不要把真实 `.env` 提交到仓库。
+
+## 3. 动作数据
+
+编辑 `server/exercises.json`：
+
+```json
+{
+  "id": "barbell-bench-press",
+  "name": "杠铃卧推",
+  "isPro": true,
+  "thumbKey": "exercises/barbell-bench-press/thumb.webp",
+  "videoKey": "exercises/barbell-bench-press/demo.mp4"
+}
+```
+
+`isPro: true` 的动作需要会员才能获取资源 URL。
+
+## 4. 手动开通会员
+
+支付接入前，可以用后台接口手动开通：
+
+```bash
+curl -X POST https://xckjsoft.cn/fitness-api/api/admin/membership \
+  -H 'content-type: application/json' \
+  -H 'x-admin-secret: YOUR_ADMIN_SECRET' \
+  -d '{"openid":"USER_OPENID","level":"pro","expiresAt":"2027-01-01T00:00:00.000Z"}'
+```
+
+`expiresAt` 传 `null` 表示长期有效。
+
+## 5. 小程序侧
+
+动作库会请求：
+
+```text
+GET /api/exercises
+GET /api/exercises/:id/assets
+```
+
+非会员能看到 Pro 动作锁定状态，但拿不到 COS 临时 URL。

@@ -52,10 +52,14 @@ Page({
   },
 
   applyExerciseData(exercises, membership) {
-    const filterState = this.buildFilterState(exercises, this.data.selectedMuscle, this.data.selectedEquipment)
+    const viewExercises = exercises.map(item => ({
+      ...item,
+      displayThumb: item.thumbUrl || item.thumbPath || ''
+    }))
+    const filterState = this.buildFilterState(viewExercises, this.data.selectedMuscle, this.data.selectedEquipment)
     this.setData({
       membership,
-      exercises,
+      exercises: viewExercises,
       ...filterState
     })
     this.updateVisibleExercises()

@@ -93,6 +93,7 @@ function publicExercise(exercise, member) {
     subMuscle: exercise.subMuscle,
     equipment: exercise.equipment,
     mark: exercise.mark || exercise.muscle,
+    thumbPath: `/pages/exercises/thumbs/${exercise.id}.jpg`,
     isPro: !!exercise.isPro,
     locked: !!exercise.isPro && !member
   };

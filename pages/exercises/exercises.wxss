@@ -182,14 +182,14 @@
 
 .equipment-tabs {
   display: flex;
-  gap: 18rpx;
+  gap: 14rpx;
 }
 
 .equipment-tab {
   flex-shrink: 0;
-  min-width: 118rpx;
+  min-width: 96rpx;
   height: 62rpx;
-  padding: 0 30rpx;
+  padding: 0 22rpx;
   border-radius: 34rpx;
   background: var(--bg-card);
   color: var(--text-muted);

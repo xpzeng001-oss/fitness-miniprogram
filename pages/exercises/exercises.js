@@ -24,7 +24,9 @@ Page({
     muscleGroups: [],
     equipmentGroups: [],
     exercises: [],
-    groupedExercises: []
+    groupedExercises: [],
+    detailVisible: false,
+    activeExercise: null
   },
 
   onLoad() {
@@ -191,20 +193,42 @@ Page({
       return
     }
 
+    this.setData({
+      detailVisible: true,
+      activeExercise: {
+        ...exercise,
+        loadingAssets: true,
+        videoUrl: ''
+      }
+    })
+
     api.getExerciseAssets(id)
       .then(assets => {
-        wx.showModal({
-          title: exercise.name,
-          content: '资源链接已获取，可在详情页接入图片和视频。\n有效期：' + assets.expiresIn + ' 秒',
-          showCancel: false
+        this.setData({
+          activeExercise: {
+            ...this.data.activeExercise,
+            displayThumb: assets.thumbUrl || exercise.displayThumb,
+            videoUrl: assets.videoUrl || '',
+            loadingAssets: false
+          }
         })
       })
       .catch(err => {
-        wx.showToast({
-          title: err.message === 'membership required' ? '需要会员权限' : '资源加载失败',
-          icon: 'none'
+        this.setData({
+          activeExercise: {
+            ...this.data.activeExercise,
+            loadingAssets: false,
+            assetError: err.message === 'membership required' ? '需要会员权限' : ''
+          }
         })
       })
+  },
+
+  closeExerciseDetail() {
+    this.setData({
+      detailVisible: false,
+      activeExercise: null
+    })
   },
 
   updateVisibleExercises() {

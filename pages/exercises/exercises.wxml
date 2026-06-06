@@ -101,4 +101,32 @@
       </view>
     </scroll-view>
   </view>
+
+  <view wx:if="{{detailVisible && activeExercise}}" class="detail-mask" bindtap="closeExerciseDetail">
+    <view class="detail-sheet" catchtap="noop">
+      <view class="detail-head">
+        <text class="detail-title">{{activeExercise.name}}</text>
+        <view class="detail-close" bindtap="closeExerciseDetail">×</view>
+      </view>
+
+      <view class="detail-media">
+        <image wx:if="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFit"></image>
+        <view wx:else class="movement-figure">{{activeExercise.mark}}</view>
+      </view>
+
+      <view class="detail-tags">
+        <text class="movement-tag primary">{{activeExercise.subMuscle}}</text>
+        <text class="movement-tag">{{activeExercise.equipment}}</text>
+        <text class="movement-tag">{{activeExercise.muscle}}</text>
+      </view>
+
+      <video
+        wx:if="{{activeExercise.videoUrl}}"
+        class="detail-video"
+        src="{{activeExercise.videoUrl}}"
+        controls
+        object-fit="contain"
+      ></video>
+    </view>
+  </view>
 </view>

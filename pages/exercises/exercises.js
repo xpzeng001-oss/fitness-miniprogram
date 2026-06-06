@@ -3,6 +3,15 @@ const fallbackLibrary = require('./library')
 
 const MUSCLE_ORDER = ['胸', '背', '肩', '臂', '腿', '臀', '核心']
 const EQUIPMENT_ORDER = ['杠铃', '哑铃', '器械', '绳索', '史密斯', '弹力带', '壶铃', '自重', '双杠', '凳']
+const SUB_MUSCLE_ORDER = {
+  '胸': ['上胸', '中胸', '下胸', '胸内侧', '胸'],
+  '背': ['背阔肌', '中背', '下背阔', '上背'],
+  '肩': ['前束', '中束', '后束', '肩部综合'],
+  '臂': ['肱二头肌', '肱肌', '肱三头肌', '手臂综合'],
+  '腿': ['大腿前侧', '大腿后侧', '单腿稳定', '小腿', '腿部综合'],
+  '臀': ['臀大肌', '臀中肌', '臀后侧', '臀腿综合', '臀部综合'],
+  '核心': ['上腹', '下腹', '腹斜肌', '核心稳定', '核心综合']
+}
 
 Page({
   data: {
@@ -68,7 +77,7 @@ Page({
       const children = [
         { name: '全部', count: list.length },
         ...Object.keys(subCounts)
-          .sort((a, b) => subCounts[b] - subCounts[a] || a.localeCompare(b, 'zh-Hans-CN'))
+          .sort((a, b) => this.compareByOrder(a, b, SUB_MUSCLE_ORDER[name] || []))
           .map(sub => ({ name: sub, count: subCounts[sub] }))
       ]
 
@@ -90,16 +99,18 @@ Page({
   },
 
   sortByOrder(values, order) {
-    return values.sort((a, b) => {
-      const ai = order.indexOf(a)
-      const bi = order.indexOf(b)
-      if (ai !== -1 || bi !== -1) {
-        if (ai === -1) return 1
-        if (bi === -1) return -1
-        return ai - bi
-      }
-      return a.localeCompare(b, 'zh-Hans-CN')
-    })
+    return values.sort((a, b) => this.compareByOrder(a, b, order))
+  },
+
+  compareByOrder(a, b, order) {
+    const ai = order.indexOf(a)
+    const bi = order.indexOf(b)
+    if (ai !== -1 || bi !== -1) {
+      if (ai === -1) return 1
+      if (bi === -1) return -1
+      return ai - bi
+    }
+    return a.localeCompare(b, 'zh-Hans-CN')
   },
 
   toggleSearch() {

@@ -282,7 +282,7 @@ module.exports = [
     "id": "chest-032",
     "name": "哑铃平板窄距卧推",
     "muscle": "胸",
-    "subMuscle": "中胸",
+    "subMuscle": "胸",
     "equipment": "哑铃",
     "mark": "胸",
     "isPro": false
@@ -399,7 +399,7 @@ module.exports = [
     "id": "back-008",
     "name": "杠铃反手划船",
     "muscle": "背",
-    "subMuscle": "中背",
+    "subMuscle": "下背阔",
     "equipment": "杠铃",
     "mark": "背",
     "isPro": false
@@ -543,7 +543,7 @@ module.exports = [
     "id": "back-024",
     "name": "史密斯反手划船",
     "muscle": "背",
-    "subMuscle": "中背",
+    "subMuscle": "下背阔",
     "equipment": "史密斯",
     "mark": "背",
     "isPro": false
@@ -570,7 +570,7 @@ module.exports = [
     "id": "back-027",
     "name": "哑铃反手划船",
     "muscle": "背",
-    "subMuscle": "中背",
+    "subMuscle": "下背阔",
     "equipment": "哑铃",
     "mark": "背",
     "isPro": false
@@ -858,7 +858,7 @@ module.exports = [
     "id": "shoulders-029",
     "name": "下斜折刀俯卧撑",
     "muscle": "肩",
-    "subMuscle": "肩部",
+    "subMuscle": "前束",
     "equipment": "自重",
     "mark": "肩",
     "isPro": false
@@ -930,7 +930,7 @@ module.exports = [
     "id": "shoulders-037",
     "name": "折刀俯卧撑",
     "muscle": "肩",
-    "subMuscle": "肩部",
+    "subMuscle": "前束",
     "equipment": "自重",
     "mark": "肩",
     "isPro": false
@@ -1020,7 +1020,7 @@ module.exports = [
     "id": "arms-007",
     "name": "弹力带站姿锤式弯举",
     "muscle": "臂",
-    "subMuscle": "肱二头肌",
+    "subMuscle": "肱肌",
     "equipment": "弹力带",
     "mark": "臂",
     "isPro": false
@@ -1056,7 +1056,7 @@ module.exports = [
     "id": "arms-011",
     "name": "靠墙锤式弯举",
     "muscle": "臂",
-    "subMuscle": "肱二头肌",
+    "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
     "isPro": false
@@ -1101,7 +1101,7 @@ module.exports = [
     "id": "arms-016",
     "name": "上斜锤式弯举",
     "muscle": "臂",
-    "subMuscle": "肱二头肌",
+    "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
     "isPro": false
@@ -1155,7 +1155,7 @@ module.exports = [
     "id": "arms-022",
     "name": "绳索锤式弯举",
     "muscle": "臂",
-    "subMuscle": "肱二头肌",
+    "subMuscle": "肱肌",
     "equipment": "绳索",
     "mark": "臂",
     "isPro": false
@@ -1263,7 +1263,7 @@ module.exports = [
     "id": "arms-034",
     "name": "站姿锤式弯举",
     "muscle": "臂",
-    "subMuscle": "肱二头肌",
+    "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
     "isPro": false
@@ -1308,7 +1308,7 @@ module.exports = [
     "id": "arms-039",
     "name": "坐姿锤式弯举",
     "muscle": "臂",
-    "subMuscle": "肱二头肌",
+    "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
     "isPro": false
@@ -1353,7 +1353,7 @@ module.exports = [
     "id": "legs-001",
     "name": "倒蹬",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "器械",
     "mark": "腿",
     "isPro": false
@@ -1362,7 +1362,7 @@ module.exports = [
     "id": "legs-002",
     "name": "杠铃单腿登箱",
     "muscle": "腿",
-    "subMuscle": "综合",
+    "subMuscle": "单腿稳定",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1371,7 +1371,7 @@ module.exports = [
     "id": "legs-003",
     "name": "杠铃单腿蹲",
     "muscle": "腿",
-    "subMuscle": "大腿",
+    "subMuscle": "单腿稳定",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1380,7 +1380,7 @@ module.exports = [
     "id": "legs-004",
     "name": "杠铃前蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1389,7 +1389,7 @@ module.exports = [
     "id": "legs-005",
     "name": "杠铃深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1398,7 +1398,7 @@ module.exports = [
     "id": "legs-006",
     "name": "杠铃硬拉",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1407,7 +1407,7 @@ module.exports = [
     "id": "legs-007",
     "name": "杠铃早安式",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1416,7 +1416,7 @@ module.exports = [
     "id": "legs-008",
     "name": "固定器械单腿后勾",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "器械",
     "mark": "腿",
     "isPro": false
@@ -1425,7 +1425,7 @@ module.exports = [
     "id": "legs-009",
     "name": "固定器械腿后勾",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "器械",
     "mark": "腿",
     "isPro": false
@@ -1434,7 +1434,7 @@ module.exports = [
     "id": "legs-010",
     "name": "壶铃高脚杯深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "壶铃",
     "mark": "腿",
     "isPro": false
@@ -1443,7 +1443,7 @@ module.exports = [
     "id": "legs-011",
     "name": "壶铃前蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "壶铃",
     "mark": "腿",
     "isPro": false
@@ -1452,7 +1452,7 @@ module.exports = [
     "id": "legs-012",
     "name": "壶铃硬拉",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "壶铃",
     "mark": "腿",
     "isPro": false
@@ -1461,7 +1461,7 @@ module.exports = [
     "id": "legs-013",
     "name": "靠墙坐",
     "muscle": "腿",
-    "subMuscle": "大腿",
+    "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1470,7 +1470,7 @@ module.exports = [
     "id": "legs-014",
     "name": "六角杠铃深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "杠铃",
     "mark": "腿",
     "isPro": false
@@ -1479,7 +1479,7 @@ module.exports = [
     "id": "legs-015",
     "name": "史密斯单腿蹲",
     "muscle": "腿",
-    "subMuscle": "大腿",
+    "subMuscle": "单腿稳定",
     "equipment": "史密斯",
     "mark": "腿",
     "isPro": false
@@ -1488,7 +1488,7 @@ module.exports = [
     "id": "legs-016",
     "name": "史密斯弓步蹲",
     "muscle": "腿",
-    "subMuscle": "综合",
+    "subMuscle": "单腿稳定",
     "equipment": "史密斯",
     "mark": "腿",
     "isPro": false
@@ -1497,7 +1497,7 @@ module.exports = [
     "id": "legs-017",
     "name": "史密斯前蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "史密斯",
     "mark": "腿",
     "isPro": false
@@ -1506,7 +1506,7 @@ module.exports = [
     "id": "legs-018",
     "name": "史密斯深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "史密斯",
     "mark": "腿",
     "isPro": false
@@ -1515,7 +1515,7 @@ module.exports = [
     "id": "legs-019",
     "name": "史密斯腿举",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "史密斯",
     "mark": "腿",
     "isPro": false
@@ -1524,7 +1524,7 @@ module.exports = [
     "id": "legs-020",
     "name": "腿举",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "器械",
     "mark": "腿",
     "isPro": false
@@ -1533,7 +1533,7 @@ module.exports = [
     "id": "legs-021",
     "name": "相扑深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1542,7 +1542,7 @@ module.exports = [
     "id": "legs-022",
     "name": "哑铃单腿登箱",
     "muscle": "腿",
-    "subMuscle": "综合",
+    "subMuscle": "单腿稳定",
     "equipment": "哑铃",
     "mark": "腿",
     "isPro": false
@@ -1551,7 +1551,7 @@ module.exports = [
     "id": "legs-023",
     "name": "哑铃杆握式相扑深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "哑铃",
     "mark": "腿",
     "isPro": false
@@ -1560,7 +1560,7 @@ module.exports = [
     "id": "legs-024",
     "name": "哑铃弓步蹲",
     "muscle": "腿",
-    "subMuscle": "综合",
+    "subMuscle": "单腿稳定",
     "equipment": "哑铃",
     "mark": "腿",
     "isPro": false
@@ -1569,7 +1569,7 @@ module.exports = [
     "id": "legs-025",
     "name": "哑铃农夫行走",
     "muscle": "腿",
-    "subMuscle": "综合",
+    "subMuscle": "单腿稳定",
     "equipment": "哑铃",
     "mark": "腿",
     "isPro": false
@@ -1578,7 +1578,7 @@ module.exports = [
     "id": "legs-026",
     "name": "哑铃前蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "哑铃",
     "mark": "腿",
     "isPro": false
@@ -1587,7 +1587,7 @@ module.exports = [
     "id": "legs-027",
     "name": "哑铃深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "哑铃",
     "mark": "腿",
     "isPro": false
@@ -1596,7 +1596,7 @@ module.exports = [
     "id": "legs-028",
     "name": "自重深蹲",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1605,7 +1605,7 @@ module.exports = [
     "id": "legs-029",
     "name": "坐姿单腿屈伸",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "单腿稳定",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1614,7 +1614,7 @@ module.exports = [
     "id": "legs-030",
     "name": "坐姿单腿弯举",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1623,7 +1623,7 @@ module.exports = [
     "id": "legs-031",
     "name": "坐姿腿屈伸",
     "muscle": "腿",
-    "subMuscle": "股四头肌",
+    "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1632,7 +1632,7 @@ module.exports = [
     "id": "legs-032",
     "name": "坐姿腿弯举",
     "muscle": "腿",
-    "subMuscle": "腘绳肌",
+    "subMuscle": "大腿后侧",
     "equipment": "自重",
     "mark": "腿",
     "isPro": false
@@ -1695,7 +1695,7 @@ module.exports = [
     "id": "glutes-001",
     "name": "侧桥髋外展",
     "muscle": "臀",
-    "subMuscle": "臀大肌",
+    "subMuscle": "臀中肌",
     "equipment": "自重",
     "mark": "臀",
     "isPro": false
@@ -1704,7 +1704,7 @@ module.exports = [
     "id": "glutes-002",
     "name": "单手正握壶铃甩摆",
     "muscle": "臀",
-    "subMuscle": "臀部",
+    "subMuscle": "臀腿综合",
     "equipment": "壶铃",
     "mark": "臀",
     "isPro": false
@@ -1794,7 +1794,7 @@ module.exports = [
     "id": "glutes-012",
     "name": "器械反向山羊挺身",
     "muscle": "臀",
-    "subMuscle": "臀部",
+    "subMuscle": "臀后侧",
     "equipment": "器械",
     "mark": "臀",
     "isPro": false
@@ -1803,7 +1803,7 @@ module.exports = [
     "id": "glutes-013",
     "name": "绕髋运动",
     "muscle": "臀",
-    "subMuscle": "臀大肌",
+    "subMuscle": "臀中肌",
     "equipment": "自重",
     "mark": "臀",
     "isPro": false
@@ -1884,7 +1884,7 @@ module.exports = [
     "id": "glutes-022",
     "name": "坐姿大腿外侧夹腿",
     "muscle": "臀",
-    "subMuscle": "臀大肌",
+    "subMuscle": "臀中肌",
     "equipment": "自重",
     "mark": "臀",
     "isPro": false
@@ -1902,7 +1902,7 @@ module.exports = [
     "id": "core-002",
     "name": "触膝卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -1911,7 +1911,7 @@ module.exports = [
     "id": "core-003",
     "name": "地雷管推举",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "核心综合",
     "equipment": "杠铃",
     "mark": "核",
     "isPro": false
@@ -1920,7 +1920,7 @@ module.exports = [
     "id": "core-004",
     "name": "登山跑",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "核心稳定",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -1947,7 +1947,7 @@ module.exports = [
     "id": "core-007",
     "name": "反向卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -1965,7 +1965,7 @@ module.exports = [
     "id": "core-009",
     "name": "负重卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -1992,7 +1992,7 @@ module.exports = [
     "id": "core-012",
     "name": "滑轨卷腹机训练",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "器械",
     "mark": "核",
     "isPro": false
@@ -2001,7 +2001,7 @@ module.exports = [
     "id": "core-013",
     "name": "卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2019,7 +2019,7 @@ module.exports = [
     "id": "core-015",
     "name": "靠墙屈膝卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2028,7 +2028,7 @@ module.exports = [
     "id": "core-016",
     "name": "靠墙双手触脚",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2037,7 +2037,7 @@ module.exports = [
     "id": "core-017",
     "name": "脉冲上举",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "核心综合",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2064,7 +2064,7 @@ module.exports = [
     "id": "core-020",
     "name": "器械坐姿屈髋卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "器械",
     "mark": "核",
     "isPro": false
@@ -2073,7 +2073,7 @@ module.exports = [
     "id": "core-021",
     "name": "上斜反向卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2082,7 +2082,7 @@ module.exports = [
     "id": "core-022",
     "name": "绳索跪姿卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
     "isPro": false
@@ -2091,7 +2091,7 @@ module.exports = [
     "id": "core-023",
     "name": "绳索下斜卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
     "isPro": false
@@ -2100,7 +2100,7 @@ module.exports = [
     "id": "core-024",
     "name": "绳索站姿卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
     "isPro": false
@@ -2109,7 +2109,7 @@ module.exports = [
     "id": "core-025",
     "name": "绳索站姿上提",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "核心综合",
     "equipment": "绳索",
     "mark": "核",
     "isPro": false
@@ -2118,7 +2118,7 @@ module.exports = [
     "id": "core-026",
     "name": "绳索坐姿卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
     "isPro": false
@@ -2127,7 +2127,7 @@ module.exports = [
     "id": "core-027",
     "name": "收膝卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2154,7 +2154,7 @@ module.exports = [
     "id": "core-030",
     "name": "胸前抱臂仰卧起坐",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2208,7 +2208,7 @@ module.exports = [
     "id": "core-036",
     "name": "悬腿扭转卷腹",
     "muscle": "核心",
-    "subMuscle": "下腹",
+    "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2217,7 +2217,7 @@ module.exports = [
     "id": "core-037",
     "name": "哑铃下斜仰卧起坐",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "哑铃",
     "mark": "核",
     "isPro": false
@@ -2226,7 +2226,7 @@ module.exports = [
     "id": "core-038",
     "name": "哑铃直臂卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "哑铃",
     "mark": "核",
     "isPro": false
@@ -2253,7 +2253,7 @@ module.exports = [
     "id": "core-041",
     "name": "哑铃字仰卧起坐",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "哑铃",
     "mark": "核",
     "isPro": false
@@ -2271,7 +2271,7 @@ module.exports = [
     "id": "core-043",
     "name": "仰卧卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2289,7 +2289,7 @@ module.exports = [
     "id": "core-045",
     "name": "仰卧臀桥",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "核心综合",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2298,7 +2298,7 @@ module.exports = [
     "id": "core-046",
     "name": "仰卧自行车卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2307,7 +2307,7 @@ module.exports = [
     "id": "core-047",
     "name": "直立腹肌轮训练",
     "muscle": "核心",
-    "subMuscle": "核心",
+    "subMuscle": "核心稳定",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2316,7 +2316,7 @@ module.exports = [
     "id": "core-048",
     "name": "肘碰膝卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false
@@ -2325,7 +2325,7 @@ module.exports = [
     "id": "core-049",
     "name": "字卷腹",
     "muscle": "核心",
-    "subMuscle": "腹直肌",
+    "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
     "isPro": false

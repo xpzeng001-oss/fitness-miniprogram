@@ -102,31 +102,71 @@
     </scroll-view>
   </view>
 
-  <view wx:if="{{detailVisible && activeExercise}}" class="detail-mask" bindtap="closeExerciseDetail">
-    <view class="detail-sheet" catchtap="noop">
-      <view class="detail-head">
-        <text class="detail-title">{{activeExercise.name}}</text>
-        <view class="detail-close" bindtap="closeExerciseDetail">×</view>
-      </view>
+  <view wx:if="{{detailVisible && activeExercise}}" class="detail-layer">
+    <scroll-view class="detail-scroll" scroll-y>
+      <view class="detail-grabber"></view>
+      <view class="detail-close" bindtap="closeExerciseDetail">×</view>
 
       <view class="detail-media">
-        <image wx:if="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFit"></image>
+        <video
+          wx:if="{{activeExercise.videoUrl}}"
+          class="detail-video"
+          src="{{activeExercise.videoUrl}}"
+          autoplay
+          loop
+          muted
+          controls
+          object-fit="contain"
+          show-center-play-btn="{{false}}"
+        ></video>
+        <image wx:elif="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFit"></image>
         <view wx:else class="movement-figure">{{activeExercise.mark}}</view>
       </view>
 
-      <view class="detail-tags">
-        <text class="movement-tag primary">{{activeExercise.subMuscle}}</text>
-        <text class="movement-tag">{{activeExercise.equipment}}</text>
-        <text class="movement-tag">{{activeExercise.muscle}}</text>
-      </view>
+      <view class="detail-body">
+        <text class="detail-title">{{activeExercise.name}}</text>
+        <text class="detail-subtitle">{{activeExercise.focusLabel}} · {{activeExercise.equipment}}</text>
 
-      <video
-        wx:if="{{activeExercise.videoUrl}}"
-        class="detail-video"
-        src="{{activeExercise.videoUrl}}"
-        controls
-        object-fit="contain"
-      ></video>
-    </view>
+        <view class="detail-info-card">
+          <view class="detail-info-grid">
+            <view class="detail-info-item">
+              <text class="detail-info-label">重点部位</text>
+              <text class="detail-info-value">{{activeExercise.focusLabel}}</text>
+            </view>
+            <view class="detail-info-item">
+              <text class="detail-info-label">器械</text>
+              <text class="detail-info-value">{{activeExercise.equipment}}</text>
+            </view>
+            <view class="detail-info-item">
+              <text class="detail-info-label">难度</text>
+              <text class="detail-info-value">{{activeExercise.difficulty}}</text>
+            </view>
+          </view>
+
+          <view wx:if="{{activeExercise.assistMuscles.length}}" class="assist-row">
+            <text class="assist-label">辅助肌群</text>
+            <view class="assist-tags">
+              <text wx:for="{{activeExercise.assistMuscles}}" wx:key="*this" class="assist-tag">{{item}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="detail-card">
+          <text class="detail-card-title">动作要点</text>
+          <view wx:for="{{activeExercise.cues}}" wx:key="*this" class="detail-list-row">
+            <text class="detail-check">✓</text>
+            <text class="detail-list-text">{{item}}</text>
+          </view>
+        </view>
+
+        <view class="detail-card">
+          <text class="detail-card-title">常见错误</text>
+          <view wx:for="{{activeExercise.mistakes}}" wx:key="*this" class="detail-list-row">
+            <text class="detail-warning">!</text>
+            <text class="detail-list-text">{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
   </view>
 </view>

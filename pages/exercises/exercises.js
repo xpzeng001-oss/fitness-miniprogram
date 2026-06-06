@@ -195,22 +195,17 @@ Page({
 
     this.setData({
       detailVisible: true,
-      activeExercise: {
-        ...exercise,
-        loadingAssets: true,
-        videoUrl: ''
-      }
+      activeExercise: this.buildExerciseDetail(exercise, { loadingAssets: true, videoUrl: '' })
     })
 
     api.getExerciseAssets(id)
       .then(assets => {
         this.setData({
-          activeExercise: {
-            ...this.data.activeExercise,
+          activeExercise: this.buildExerciseDetail({
+            ...exercise,
             displayThumb: assets.thumbUrl || exercise.displayThumb,
-            videoUrl: assets.videoUrl || '',
-            loadingAssets: false
-          }
+            videoUrl: assets.videoUrl || ''
+          }, { loadingAssets: false })
         })
       })
       .catch(err => {
@@ -229,6 +224,54 @@ Page({
       detailVisible: false,
       activeExercise: null
     })
+  },
+
+  buildExerciseDetail(exercise, extra) {
+    const focusLabel = exercise.subMuscle.indexOf('为主') !== -1
+      ? exercise.subMuscle
+      : exercise.subMuscle + '为主'
+    const assistMuscles = this.getAssistMuscles(exercise)
+
+    return {
+      ...exercise,
+      ...extra,
+      focusLabel,
+      difficulty: exercise.isPro ? '进阶' : '入门',
+      assistMuscles,
+      cues: this.getExerciseCues(exercise),
+      mistakes: this.getExerciseMistakes(exercise)
+    }
+  },
+
+  getAssistMuscles(exercise) {
+    const map = {
+      '胸': ['肩', '臂'],
+      '背': ['臂', '肩'],
+      '肩': ['臂', '斜方'],
+      '臂': ['肩', '前臂'],
+      '腿': ['臀', '核心'],
+      '臀': ['腿', '核心'],
+      '核心': ['髋', '肩']
+    }
+    return map[exercise.muscle] || []
+  },
+
+  getExerciseCues(exercise) {
+    const equipmentText = exercise.equipment === '自重' ? '身体' : exercise.equipment
+    return [
+      `起始时稳定身体，让${exercise.subMuscle}保持主动发力`,
+      `动作过程中控制${equipmentText}轨迹，避免借力晃动`,
+      '还原时放慢速度，保持目标肌群持续张力'
+    ]
+  },
+
+  getExerciseMistakes(exercise) {
+    const equipmentText = exercise.equipment === '自重' ? '身体' : exercise.equipment
+    return [
+      `${equipmentText}移动过快，失去控制`,
+      '为了完成次数牺牲动作幅度',
+      '核心松散，身体姿态不稳定'
+    ]
   },
 
   updateVisibleExercises() {

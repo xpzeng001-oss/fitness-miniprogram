@@ -1,10 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class="container">
   <view class="header animate-fade-in">
-    <view class="greeting">
-      <text class="greeting-text">{{greeting}}</text>
-      <text class="greeting-emoji">💪</text>
-    </view>
     <view class="date-display">{{currentDate}}</view>
   </view>
 

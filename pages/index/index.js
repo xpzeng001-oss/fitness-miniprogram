@@ -68,6 +68,9 @@ Page({
     else greeting = '夜深了，早点休息'
 
     this.setData({ greeting })
+    wx.setNavigationBarTitle({
+      title: greeting + ' 💪'
+    })
   },
 
   setCurrentDate() {

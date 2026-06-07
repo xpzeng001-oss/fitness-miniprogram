@@ -24,12 +24,12 @@
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item">
-        <view class="stat-value text-success">{{todayVolume}}</view>
+        <view class="stat-value text-primary">{{todayVolume}}</view>
         <view class="stat-label">总容量(kg)</view>
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item">
-        <view class="stat-value text-warning">{{prCount}}</view>
+        <view class="stat-value text-primary">{{prCount}}</view>
         <view class="stat-label">PR记录</view>
       </view>
     </view>

@@ -42,10 +42,6 @@
         <text class="stat-value">{{totalVolumeTons}}</text>
         <text class="stat-label">总重量(吨)</text>
       </view>
-      <view class="stat-card">
-        <text class="stat-value">{{statistics.longestStreak}}</text>
-        <text class="stat-label">最长连续(天)</text>
-      </view>
     </view>
   </view>
 

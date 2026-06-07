@@ -1,51 +1,35 @@
 <!-- pages/profile/profile.wxml -->
 <view class="profile-container">
 
-  <!-- 1. 顶部用户信息卡片 -->
+  <!-- 1. 顶部用户信息 -->
   <view class="user-card">
-    <view class="user-header">
-      <view class="avatar-wrap" bindtap="changeAvatar">
-        <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
-        <text wx:else class="avatar-text">{{userInfo.nickname[0] || 'F'}}</text>
-        <view class="avatar-edit-icon">
-          <text class="edit-icon-text">✎</text>
-        </view>
-      </view>
-      <view class="user-info">
-        <view class="nickname-row" bindtap="editNickname">
-          <text class="nickname">{{userInfo.nickname}}</text>
-          <text class="nickname-edit">✎</text>
-        </view>
-        <view class="stats-brief">
-          <text class="stat-item">已训练 {{statistics.totalWorkouts}} 次</text>
-          <text class="streak" wx:if="{{statistics.currentStreak > 0}}">🔥 连续{{statistics.currentStreak}}天</text>
-        </view>
+    <view class="avatar-wrap" bindtap="changeAvatar">
+      <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
+      <view wx:else class="avatar-placeholder">
+        <view class="avatar-head"></view>
+        <view class="avatar-body"></view>
       </view>
     </view>
-  </view>
-
-  <!-- 2. 数据统计区 -->
-  <view class="stats-section">
-    <view class="section-header">
-      <text class="section-title">📊 我的训练数据</text>
+    <view class="welcome-row" bindtap="editNickname">
+      <text class="welcome-text">{{welcomeName}}，欢迎你！</text>
     </view>
-    <view class="stats-grid">
-      <view class="stat-card">
+    <view class="profile-stats">
+      <view class="profile-stat">
         <text class="stat-value">{{statistics.totalWorkouts}}</text>
-        <text class="stat-label">总训练</text>
+        <text class="stat-label">记录</text>
       </view>
-      <view class="stat-card">
-        <text class="stat-value">{{statistics.totalPRs}}</text>
-        <text class="stat-label">PR次数</text>
-      </view>
-      <view class="stat-card">
+      <view class="profile-stat">
         <text class="stat-value">{{totalVolumeTons}}</text>
-        <text class="stat-label">总重量(吨)</text>
+        <text class="stat-label">总重量</text>
+      </view>
+      <view class="profile-stat">
+        <text class="stat-value">{{totalDurationMinutes}}</text>
+        <text class="stat-label">时长（分钟）</text>
       </view>
     </view>
   </view>
 
-  <!-- 3. 成就墙 -->
+  <!-- 2. 成就墙 -->
   <view class="achievements-section">
     <view class="achievements-summary">
       <view class="achievement-mark">

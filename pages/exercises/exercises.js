@@ -36,7 +36,16 @@ Page({
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({ selected: 1 })
+      this.getTabBar().setHidden(false)
     }
+  },
+
+  onHide() {
+    this.setTabBarHidden(false)
+  },
+
+  onUnload() {
+    this.setTabBarHidden(false)
   },
 
   loadExercises() {
@@ -197,6 +206,7 @@ Page({
       detailVisible: true,
       activeExercise: this.buildExerciseDetail(exercise, { loadingAssets: true, videoUrl: '' })
     })
+    this.setTabBarHidden(true)
 
     api.getExerciseAssets(id)
       .then(assets => {
@@ -225,6 +235,13 @@ Page({
       detailVisible: false,
       activeExercise: null
     })
+    this.setTabBarHidden(false)
+  },
+
+  setTabBarHidden(hidden) {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setHidden(hidden)
+    }
   },
 
   onExerciseVideoError() {

@@ -13,8 +13,7 @@ Page({
     achievementProgress: 0,
     achievementsExpanded: false,
     isLoggedOut: false,
-    totalVolumeTons: 0,
-    storageSize: 0
+    totalVolumeTons: 0
   },
 
   onLoad() {
@@ -61,16 +60,12 @@ Page({
       longestStreak: longestStreak
     }
 
-    const storageInfo = wx.getStorageInfoSync()
-    const storageSize = storageInfo.currentSize
-
     this.setData({
       userInfo: profile,
       statistics: statistics,
       settings: userData.settings,
       isLoggedOut,
-      totalVolumeTons: (totalVolume / 1000).toFixed(1),
-      storageSize: storageSize
+      totalVolumeTons: (totalVolume / 1000).toFixed(1)
     })
   },
 

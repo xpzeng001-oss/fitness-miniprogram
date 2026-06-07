@@ -125,25 +125,6 @@
       </view>
     </view>
 
-    <view class="section-header">
-      <text class="section-title">📦 数据管理</text>
-    </view>
-    <view class="setting-group">
-      <view class="data-summary">
-        <text class="summary-item">训练记录：{{statistics.totalWorkouts}} 条</text>
-        <text class="summary-item">个人记录：{{statistics.totalPRs}} 个</text>
-        <text class="summary-item">占用空间：{{storageSize}} KB</text>
-      </view>
-
-      <view class="setting-item" bindtap="exportData">
-        <text class="setting-label">数据导出</text>
-        <text class="arrow">›</text>
-      </view>
-      <view class="setting-item danger" bindtap="clearAllData">
-        <text class="setting-label danger-text">清除所有数据</text>
-        <text class="arrow">›</text>
-      </view>
-    </view>
   </view>
 
   <!-- 6. 关于 -->

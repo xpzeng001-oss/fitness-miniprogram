@@ -6,6 +6,7 @@ Page({
   data: {
     userInfo: {},
     welcomeName: '亲爱的用户',
+    draftNickname: '',
     statistics: {},
     settings: {},
     displayAchievements: [],
@@ -68,6 +69,7 @@ Page({
     this.setData({
       userInfo: profile,
       welcomeName: isLoggedOut ? '亲爱的用户' : (profile.nickname || '亲爱的用户'),
+      draftNickname: isLoggedOut ? '' : (profile.nickname || ''),
       statistics: statistics,
       settings: userData.settings,
       isLoggedOut,
@@ -145,6 +147,56 @@ Page({
     })
   },
 
+  onChooseAvatar(e) {
+    if (this.data.isLoggedOut) {
+      this.loginNow()
+      return
+    }
+
+    const avatarUrl = e.detail && e.detail.avatarUrl
+    if (!avatarUrl) return
+
+    this.setData({ 'userInfo.avatar': avatarUrl })
+    wx.showLoading({ title: '绑定头像' })
+    app.globalData.api.uploadAvatar(avatarUrl).then((remoteAvatarUrl) => {
+      const userData = wx.getStorageSync('userData') || this.getDefaultUserData()
+      userData.profile.avatar = remoteAvatarUrl
+      wx.setStorageSync('userData', userData)
+      app.globalData.api.pushData('userData', userData)
+      this.setData({ 'userInfo.avatar': remoteAvatarUrl })
+      wx.hideLoading()
+      wx.showToast({ title: '头像已绑定', icon: 'success' })
+    }).catch(() => {
+      wx.hideLoading()
+      const userData = wx.getStorageSync('userData') || this.getDefaultUserData()
+      userData.profile.avatar = avatarUrl
+      wx.setStorageSync('userData', userData)
+      this.setData({ 'userInfo.avatar': avatarUrl })
+      wx.showToast({ title: '头像已保存本机，云端同步失败', icon: 'none' })
+    })
+  },
+
+  onNicknameInput(e) {
+    this.setData({ draftNickname: e.detail.value })
+  },
+
+  saveWechatNickname(e) {
+    if (this.data.isLoggedOut) return
+    const value = ((e && e.detail && e.detail.value) || this.data.draftNickname || '').trim()
+    if (!value || value === this.data.userInfo.nickname) return
+
+    const userData = wx.getStorageSync('userData') || this.getDefaultUserData()
+    userData.profile.nickname = value
+    wx.setStorageSync('userData', userData)
+    app.globalData.api.pushData('userData', userData)
+    this.setData({
+      'userInfo.nickname': value,
+      welcomeName: value,
+      draftNickname: value
+    })
+    wx.showToast({ title: '昵称已绑定', icon: 'success' })
+  },
+
   // 修改昵称
   editNickname() {
     if (this.data.isLoggedOut) {
@@ -164,7 +216,11 @@ Page({
           userData.profile.nickname = newNickname
           wx.setStorageSync('userData', userData)
           app.globalData.api.pushData('userData', userData)
-          this.setData({ 'userInfo.nickname': newNickname })
+          this.setData({
+            'userInfo.nickname': newNickname,
+            welcomeName: newNickname,
+            draftNickname: newNickname
+          })
           wx.showToast({ title: '昵称已更新', icon: 'success' })
         }
       }

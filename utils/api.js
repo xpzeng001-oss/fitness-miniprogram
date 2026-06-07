@@ -109,6 +109,35 @@ function clearData() {
   }).catch(() => {});
 }
 
+function uploadAvatar(filePath) {
+  const ext = (filePath.split('.').pop() || 'jpg').toLowerCase();
+  const mimeType = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
+
+  return new Promise((resolve, reject) => {
+    wx.getFileSystemManager().readFile({
+      filePath,
+      encoding: 'base64',
+      success: (fileRes) => {
+        request({
+          url: '/api/me/avatar',
+          method: 'POST',
+          data: {
+            avatarBase64: fileRes.data,
+            mimeType
+          }
+        }).then((res) => {
+          if (res.statusCode === 200 && res.data && res.data.avatarUrl) {
+            resolve(res.data.avatarUrl);
+          } else {
+            reject(new Error((res.data && res.data.error) || 'avatar upload failed'));
+          }
+        }).catch(reject);
+      },
+      fail: reject
+    });
+  });
+}
+
 function getMembership() {
   return request({
     url: '/api/me/membership',
@@ -145,6 +174,7 @@ module.exports = {
   pushAll,
   pullAll,
   clearData,
+  uploadAvatar,
   getMembership,
   getExercises,
   getExerciseAssets

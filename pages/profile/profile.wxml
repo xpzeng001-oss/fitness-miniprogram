@@ -4,17 +4,24 @@
   <!-- 1. 顶部用户信息 -->
   <view class="user-card">
     <view class="profile-header">
-      <view class="avatar-wrap" bindtap="changeAvatar">
+      <button class="avatar-wrap" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
         <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
         <view wx:else class="avatar-placeholder">
           <view class="avatar-head"></view>
           <view class="avatar-body"></view>
         </view>
-      </view>
+      </button>
       <view class="profile-main">
-        <view class="profile-name-row" bindtap="editNickname">
-          <text class="profile-name">{{welcomeName}}</text>
-        </view>
+        <input
+          class="profile-name"
+          type="nickname"
+          value="{{draftNickname}}"
+          placeholder="{{welcomeName}}"
+          disabled="{{isLoggedOut}}"
+          bindinput="onNicknameInput"
+          bindblur="saveWechatNickname"
+          bindconfirm="saveWechatNickname"
+        />
         <view class="profile-stats">
           <view class="profile-stat">
             <text class="stat-label">锻炼</text>

@@ -5,6 +5,7 @@ const Database = require('better-sqlite3');
 const crypto = require('crypto');
 const https = require('https');
 const path = require('path');
+const fs = require('fs');
 const COS = require('cos-nodejs-sdk-v5');
 const exerciseCatalog = require('./exercises.json');
 
@@ -25,6 +26,8 @@ const COS_REGION = process.env.TENCENT_COS_REGION;
 const COS_SIGN_EXPIRES = Number(process.env.COS_SIGN_EXPIRES || 600);
 const API_PUBLIC_BASE_URL = process.env.API_PUBLIC_BASE_URL;
 const LOCAL_ASSETS_DIR = path.resolve(__dirname, '..', 'assets');
+const UPLOADS_DIR = path.join(__dirname, 'uploads');
+const AVATARS_DIR = path.join(UPLOADS_DIR, 'avatars');
 
 const cos = process.env.TENCENT_SECRET_ID && process.env.TENCENT_SECRET_KEY
   ? new COS({
@@ -193,6 +196,10 @@ function code2session(code) {
 // ========== Express ==========
 const app = express();
 app.use(express.json({ limit: '10mb' }));
+app.use('/uploads', express.static(UPLOADS_DIR, {
+  maxAge: '30d',
+  immutable: true
+}));
 app.use('/exercise-assets', express.static(LOCAL_ASSETS_DIR, {
   maxAge: '30d',
   immutable: true
@@ -259,6 +266,34 @@ app.get('/api/me/membership', auth, (req, res) => {
       active: isMember(user)
     }
   });
+});
+
+// POST /api/me/avatar — 保存微信头像临时文件并返回稳定 URL。
+app.post('/api/me/avatar', auth, (req, res) => {
+  const { avatarBase64, mimeType = 'image/jpeg' } = req.body || {};
+  if (!avatarBase64) return res.status(400).json({ error: 'avatarBase64 required' });
+
+  const normalizedMime = String(mimeType).toLowerCase();
+  const ext = normalizedMime.includes('png') ? 'png' : normalizedMime.includes('webp') ? 'webp' : 'jpg';
+  const safeOpenid = crypto.createHash('sha1').update(req.openid).digest('hex');
+  const filename = `${safeOpenid}_${Date.now()}.${ext}`;
+  const filePath = path.join(AVATARS_DIR, filename);
+
+  try {
+    const fileBuffer = Buffer.from(avatarBase64, 'base64');
+    if (fileBuffer.length > 5 * 1024 * 1024) {
+      return res.status(413).json({ error: 'avatar too large' });
+    }
+
+    fs.mkdirSync(AVATARS_DIR, { recursive: true });
+    fs.writeFileSync(filePath, fileBuffer);
+    res.json({
+      avatarUrl: `${publicBaseUrl(req)}/uploads/avatars/${filename}`
+    });
+  } catch (err) {
+    console.error('avatar upload error:', err.message);
+    res.status(500).json({ error: 'avatar upload failed' });
+  }
 });
 
 // GET /api/exercises — 动作库列表。非会员能看到 Pro 锁定状态，但不返回资源 URL。

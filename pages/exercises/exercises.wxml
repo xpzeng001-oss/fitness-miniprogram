@@ -115,7 +115,7 @@
           autoplay
           loop
           muted
-          controls
+          controls="{{false}}"
           object-fit="cover"
           show-center-play-btn="{{false}}"
           binderror="onExerciseVideoError"

@@ -21,12 +21,12 @@
             <text class="stat-value">{{statistics.totalWorkouts}}</text>
           </view>
           <view class="profile-stat">
-            <text class="stat-label">关注者</text>
-            <text class="stat-value">0</text>
+            <text class="stat-label">总重量</text>
+            <text class="stat-value">{{totalVolumeTons}}</text>
           </view>
           <view class="profile-stat">
-            <text class="stat-label">关注</text>
-            <text class="stat-value">0</text>
+            <text class="stat-label">时长（分钟）</text>
+            <text class="stat-value">{{totalDurationMinutes}}</text>
           </view>
         </view>
       </view>

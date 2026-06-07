@@ -3,28 +3,32 @@
 
   <!-- 1. 顶部用户信息 -->
   <view class="user-card">
-    <view class="avatar-wrap" bindtap="changeAvatar">
-      <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
-      <view wx:else class="avatar-placeholder">
-        <view class="avatar-head"></view>
-        <view class="avatar-body"></view>
+    <view class="profile-header">
+      <view class="avatar-wrap" bindtap="changeAvatar">
+        <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
+        <view wx:else class="avatar-placeholder">
+          <view class="avatar-head"></view>
+          <view class="avatar-body"></view>
+        </view>
       </view>
-    </view>
-    <view class="welcome-row" bindtap="editNickname">
-      <text class="welcome-text">{{welcomeName}}，欢迎你！</text>
-    </view>
-    <view class="profile-stats">
-      <view class="profile-stat">
-        <text class="stat-value">{{statistics.totalWorkouts}}</text>
-        <text class="stat-label">记录</text>
-      </view>
-      <view class="profile-stat">
-        <text class="stat-value">{{totalVolumeTons}}</text>
-        <text class="stat-label">总重量</text>
-      </view>
-      <view class="profile-stat">
-        <text class="stat-value">{{totalDurationMinutes}}</text>
-        <text class="stat-label">时长（分钟）</text>
+      <view class="profile-main">
+        <view class="profile-name-row" bindtap="editNickname">
+          <text class="profile-name">{{welcomeName}}</text>
+        </view>
+        <view class="profile-stats">
+          <view class="profile-stat">
+            <text class="stat-label">锻炼</text>
+            <text class="stat-value">{{statistics.totalWorkouts}}</text>
+          </view>
+          <view class="profile-stat">
+            <text class="stat-label">关注者</text>
+            <text class="stat-value">0</text>
+          </view>
+          <view class="profile-stat">
+            <text class="stat-label">关注</text>
+            <text class="stat-value">0</text>
+          </view>
+        </view>
       </view>
     </view>
   </view>

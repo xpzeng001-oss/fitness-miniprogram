@@ -14,8 +14,7 @@ Page({
     achievementProgress: 0,
     achievementsExpanded: false,
     isLoggedOut: false,
-    totalVolumeTons: 0,
-    totalDurationMinutes: 0
+    totalVolumeTons: 0
   },
 
   onLoad() {
@@ -51,9 +50,6 @@ Page({
     const prCount = Object.keys(prRecords).length
 
     const totalVolume = workoutRecords.reduce((sum, r) => sum + (r.volume || 0), 0)
-    const totalDurationMinutes = workoutRecords.reduce((sum, record) => {
-      return sum + this.getRecordDurationMinutes(record)
-    }, 0)
     const currentStreak = this.calculateCurrentStreak(workoutRecords)
     const longestStreak = this.calculateLongestStreak(workoutRecords)
 
@@ -71,17 +67,8 @@ Page({
       statistics: statistics,
       settings: userData.settings,
       isLoggedOut,
-      totalVolumeTons: (totalVolume / 1000).toFixed(1),
-      totalDurationMinutes
+      totalVolumeTons: (totalVolume / 1000).toFixed(1)
     })
-  },
-
-  getRecordDurationMinutes(record) {
-    const duration = record.durationMinutes || record.durationMin || record.minutes
-    if (duration) return Math.round(Number(duration) || 0)
-    if (record.durationMs) return Math.round((Number(record.durationMs) || 0) / 60000)
-    if (record.durationSeconds) return Math.round((Number(record.durationSeconds) || 0) / 60)
-    return 0
   },
 
   loadAchievements() {

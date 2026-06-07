@@ -16,15 +16,12 @@
 .profile-header {
   display: flex;
   align-items: center;
-  gap: 32rpx;
+  gap: 30rpx;
 }
 
 .avatar-wrap {
   width: 160rpx;
   height: 160rpx;
-  padding: 0;
-  margin: 0;
-  border: none;
   border-radius: 50%;
   background: #5d5e62;
   display: flex;
@@ -36,7 +33,21 @@
   line-height: normal;
 }
 
-.avatar-wrap::after {
+.avatar-button {
+  position: absolute;
+  inset: 0;
+  width: 160rpx;
+  height: 160rpx;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  line-height: normal;
+  opacity: 0;
+}
+
+.avatar-button::after {
   border: none;
 }
 
@@ -98,7 +109,7 @@
 .profile-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 34rpx;
+  column-gap: 24rpx;
 }
 
 .profile-stat {
@@ -129,10 +140,11 @@
 
 .stat-label {
   display: block;
-  font-size: 26rpx;
+  font-size: 23rpx;
   line-height: 1.15;
   color: var(--text-muted);
   margin-bottom: 12rpx;
+  white-space: nowrap;
 }
 
 /* 3. 成就墙 */

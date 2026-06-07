@@ -4,13 +4,14 @@
   <!-- 1. 顶部用户信息 -->
   <view class="user-card">
     <view class="profile-header">
-      <button class="avatar-wrap" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <view class="avatar-wrap">
         <image wx:if="{{userInfo.avatar}}" class="avatar-img" src="{{userInfo.avatar}}" mode="aspectFill" />
         <view wx:else class="avatar-placeholder">
           <view class="avatar-head"></view>
           <view class="avatar-body"></view>
         </view>
-      </button>
+        <button class="avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar"></button>
+      </view>
       <view class="profile-main">
         <input
           class="profile-name"

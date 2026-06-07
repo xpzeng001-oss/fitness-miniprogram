@@ -78,7 +78,7 @@ Page({
     return apiExercises.map(item => ({
       ...(localById[item.id] || {}),
       ...item,
-      thumbPath: item.thumbPath || (localById[item.id] && localById[item.id].thumbPath) || ''
+      thumbPath: ''
     }))
   },
 

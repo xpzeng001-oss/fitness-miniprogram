@@ -6,8 +6,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-001.jpg"
+    "isPro": false
   },
   {
     "id": "chest-002",
@@ -16,8 +15,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "杠铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-002.jpg"
+    "isPro": false
   },
   {
     "id": "chest-003",
@@ -26,8 +24,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "杠铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-003.jpg"
+    "isPro": false
   },
   {
     "id": "chest-004",
@@ -36,8 +33,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "杠铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-004.jpg"
+    "isPro": false
   },
   {
     "id": "chest-005",
@@ -46,8 +42,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "杠铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-005.jpg"
+    "isPro": false
   },
   {
     "id": "chest-006",
@@ -56,8 +51,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-006.jpg"
+    "isPro": false
   },
   {
     "id": "chest-007",
@@ -66,8 +60,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-007.jpg"
+    "isPro": false
   },
   {
     "id": "chest-008",
@@ -76,8 +69,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "器械",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-008.jpg"
+    "isPro": false
   },
   {
     "id": "chest-009",
@@ -86,8 +78,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "器械",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-009.jpg"
+    "isPro": false
   },
   {
     "id": "chest-010",
@@ -96,8 +87,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-010.jpg"
+    "isPro": false
   },
   {
     "id": "chest-011",
@@ -106,8 +96,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-011.jpg"
+    "isPro": false
   },
   {
     "id": "chest-012",
@@ -116,8 +105,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-012.jpg"
+    "isPro": false
   },
   {
     "id": "chest-013",
@@ -126,8 +114,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-013.jpg"
+    "isPro": false
   },
   {
     "id": "chest-014",
@@ -136,8 +123,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-014.jpg"
+    "isPro": false
   },
   {
     "id": "chest-015",
@@ -146,8 +132,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-015.jpg"
+    "isPro": false
   },
   {
     "id": "chest-016",
@@ -156,8 +141,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-016.jpg"
+    "isPro": false
   },
   {
     "id": "chest-017",
@@ -166,8 +150,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-017.jpg"
+    "isPro": false
   },
   {
     "id": "chest-018",
@@ -176,8 +159,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-018.jpg"
+    "isPro": false
   },
   {
     "id": "chest-019",
@@ -186,8 +168,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-019.jpg"
+    "isPro": false
   },
   {
     "id": "chest-020",
@@ -196,8 +177,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-020.jpg"
+    "isPro": false
   },
   {
     "id": "chest-021",
@@ -206,8 +186,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-021.jpg"
+    "isPro": false
   },
   {
     "id": "chest-022",
@@ -216,8 +195,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-022.jpg"
+    "isPro": false
   },
   {
     "id": "chest-023",
@@ -226,8 +204,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "绳索",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-023.jpg"
+    "isPro": false
   },
   {
     "id": "chest-024",
@@ -236,8 +213,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "史密斯",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-024.jpg"
+    "isPro": false
   },
   {
     "id": "chest-025",
@@ -246,8 +222,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "史密斯",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-025.jpg"
+    "isPro": false
   },
   {
     "id": "chest-026",
@@ -256,8 +231,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "史密斯",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-026.jpg"
+    "isPro": false
   },
   {
     "id": "chest-027",
@@ -266,8 +240,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "史密斯",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-027.jpg"
+    "isPro": false
   },
   {
     "id": "chest-028",
@@ -276,8 +249,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-028.jpg"
+    "isPro": false
   },
   {
     "id": "chest-029",
@@ -286,8 +258,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-029.jpg"
+    "isPro": false
   },
   {
     "id": "chest-030",
@@ -296,8 +267,7 @@ module.exports = [
     "subMuscle": "胸内侧",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-030.jpg"
+    "isPro": false
   },
   {
     "id": "chest-031",
@@ -306,8 +276,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-031.jpg"
+    "isPro": false
   },
   {
     "id": "chest-032",
@@ -316,8 +285,7 @@ module.exports = [
     "subMuscle": "胸",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-032.jpg"
+    "isPro": false
   },
   {
     "id": "chest-033",
@@ -326,8 +294,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-033.jpg"
+    "isPro": false
   },
   {
     "id": "chest-034",
@@ -336,8 +303,7 @@ module.exports = [
     "subMuscle": "上胸",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-034.jpg"
+    "isPro": false
   },
   {
     "id": "chest-035",
@@ -346,8 +312,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-035.jpg"
+    "isPro": false
   },
   {
     "id": "chest-036",
@@ -356,8 +321,7 @@ module.exports = [
     "subMuscle": "下胸",
     "equipment": "哑铃",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-036.jpg"
+    "isPro": false
   },
   {
     "id": "chest-037",
@@ -366,8 +330,7 @@ module.exports = [
     "subMuscle": "中胸",
     "equipment": "自重",
     "mark": "胸",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/chest-037.jpg"
+    "isPro": false
   },
   {
     "id": "back-001",
@@ -376,8 +339,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "弹力带",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-001.jpg"
+    "isPro": false
   },
   {
     "id": "back-002",
@@ -386,8 +348,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "弹力带",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-002.jpg"
+    "isPro": false
   },
   {
     "id": "back-003",
@@ -396,8 +357,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "弹力带",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-003.jpg"
+    "isPro": false
   },
   {
     "id": "back-004",
@@ -406,8 +366,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "弹力带",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-004.jpg"
+    "isPro": false
   },
   {
     "id": "back-005",
@@ -416,8 +375,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "器械",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-005.jpg"
+    "isPro": false
   },
   {
     "id": "back-006",
@@ -426,8 +384,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "自重",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-006.jpg"
+    "isPro": false
   },
   {
     "id": "back-007",
@@ -436,8 +393,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "自重",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-007.jpg"
+    "isPro": false
   },
   {
     "id": "back-008",
@@ -446,8 +402,7 @@ module.exports = [
     "subMuscle": "下背阔",
     "equipment": "杠铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-008.jpg"
+    "isPro": false
   },
   {
     "id": "back-009",
@@ -456,8 +411,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "杠铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-009.jpg"
+    "isPro": false
   },
   {
     "id": "back-010",
@@ -466,8 +420,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "杠铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-010.jpg"
+    "isPro": false
   },
   {
     "id": "back-011",
@@ -476,8 +429,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "器械",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-011.jpg"
+    "isPro": false
   },
   {
     "id": "back-012",
@@ -486,8 +438,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "器械",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-012.jpg"
+    "isPro": false
   },
   {
     "id": "back-013",
@@ -496,8 +447,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "弹力带",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-013.jpg"
+    "isPro": false
   },
   {
     "id": "back-014",
@@ -506,8 +456,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "弹力带",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-014.jpg"
+    "isPro": false
   },
   {
     "id": "back-015",
@@ -516,8 +465,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "自重",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-015.jpg"
+    "isPro": false
   },
   {
     "id": "back-016",
@@ -526,8 +474,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "杠铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-016.jpg"
+    "isPro": false
   },
   {
     "id": "back-017",
@@ -536,8 +483,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-017.jpg"
+    "isPro": false
   },
   {
     "id": "back-018",
@@ -546,8 +492,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-018.jpg"
+    "isPro": false
   },
   {
     "id": "back-019",
@@ -556,8 +501,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-019.jpg"
+    "isPro": false
   },
   {
     "id": "back-020",
@@ -566,8 +510,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-020.jpg"
+    "isPro": false
   },
   {
     "id": "back-021",
@@ -576,8 +519,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-021.jpg"
+    "isPro": false
   },
   {
     "id": "back-022",
@@ -586,8 +528,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-022.jpg"
+    "isPro": false
   },
   {
     "id": "back-023",
@@ -596,8 +537,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "绳索",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-023.jpg"
+    "isPro": false
   },
   {
     "id": "back-024",
@@ -606,8 +546,7 @@ module.exports = [
     "subMuscle": "下背阔",
     "equipment": "史密斯",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-024.jpg"
+    "isPro": false
   },
   {
     "id": "back-025",
@@ -616,8 +555,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "史密斯",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-025.jpg"
+    "isPro": false
   },
   {
     "id": "back-026",
@@ -626,8 +564,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "哑铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-026.jpg"
+    "isPro": false
   },
   {
     "id": "back-027",
@@ -636,8 +573,7 @@ module.exports = [
     "subMuscle": "下背阔",
     "equipment": "哑铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-027.jpg"
+    "isPro": false
   },
   {
     "id": "back-028",
@@ -646,8 +582,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "哑铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-028.jpg"
+    "isPro": false
   },
   {
     "id": "back-029",
@@ -656,8 +591,7 @@ module.exports = [
     "subMuscle": "中背",
     "equipment": "哑铃",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-029.jpg"
+    "isPro": false
   },
   {
     "id": "back-030",
@@ -666,8 +600,7 @@ module.exports = [
     "subMuscle": "背阔肌",
     "equipment": "自重",
     "mark": "背",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/back-030.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-001",
@@ -676,8 +609,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-001.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-002",
@@ -686,8 +618,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-002.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-003",
@@ -696,8 +627,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-003.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-004",
@@ -706,8 +636,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-004.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-005",
@@ -716,8 +645,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-005.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-006",
@@ -726,8 +654,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-006.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-007",
@@ -736,8 +663,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "弹力带",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-007.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-008",
@@ -746,8 +672,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "杠铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-008.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-009",
@@ -756,8 +681,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "杠铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-009.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-010",
@@ -766,8 +690,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "杠铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-010.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-011",
@@ -776,8 +699,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "杠铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-011.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-012",
@@ -786,8 +708,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "器械",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-012.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-013",
@@ -796,8 +717,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "器械",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-013.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-014",
@@ -806,8 +726,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "器械",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-014.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-015",
@@ -816,8 +735,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "器械",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-015.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-016",
@@ -826,8 +744,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-016.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-017",
@@ -836,8 +753,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-017.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-018",
@@ -846,8 +762,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-018.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-019",
@@ -856,8 +771,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-019.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-020",
@@ -866,8 +780,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-020.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-021",
@@ -876,8 +789,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-021.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-022",
@@ -886,8 +798,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-022.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-023",
@@ -896,8 +807,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-023.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-024",
@@ -906,8 +816,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "绳索",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-024.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-025",
@@ -916,8 +825,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "史密斯",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-025.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-026",
@@ -926,8 +834,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "史密斯",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-026.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-027",
@@ -936,8 +843,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "史密斯",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-027.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-028",
@@ -946,8 +852,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "史密斯",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-028.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-029",
@@ -956,8 +861,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "自重",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-029.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-030",
@@ -966,8 +870,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-030.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-031",
@@ -976,8 +879,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-031.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-032",
@@ -986,8 +888,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-032.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-033",
@@ -996,8 +897,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-033.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-034",
@@ -1006,8 +906,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-034.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-035",
@@ -1016,8 +915,7 @@ module.exports = [
     "subMuscle": "中束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-035.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-036",
@@ -1026,8 +924,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-036.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-037",
@@ -1036,8 +933,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "自重",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-037.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-038",
@@ -1046,8 +942,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "自重",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-038.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-039",
@@ -1056,8 +951,7 @@ module.exports = [
     "subMuscle": "后束",
     "equipment": "器械",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-039.jpg"
+    "isPro": false
   },
   {
     "id": "shoulders-040",
@@ -1066,8 +960,7 @@ module.exports = [
     "subMuscle": "前束",
     "equipment": "哑铃",
     "mark": "肩",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/shoulders-040.jpg"
+    "isPro": false
   },
   {
     "id": "arms-001",
@@ -1076,8 +969,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "凳",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-001.jpg"
+    "isPro": false
   },
   {
     "id": "arms-002",
@@ -1086,8 +978,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "弹力带",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-002.jpg"
+    "isPro": false
   },
   {
     "id": "arms-003",
@@ -1096,8 +987,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "弹力带",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-003.jpg"
+    "isPro": false
   },
   {
     "id": "arms-004",
@@ -1106,8 +996,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "弹力带",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-004.jpg"
+    "isPro": false
   },
   {
     "id": "arms-005",
@@ -1116,8 +1005,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "弹力带",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-005.jpg"
+    "isPro": false
   },
   {
     "id": "arms-006",
@@ -1126,8 +1014,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "弹力带",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-006.jpg"
+    "isPro": false
   },
   {
     "id": "arms-007",
@@ -1136,8 +1023,7 @@ module.exports = [
     "subMuscle": "肱肌",
     "equipment": "弹力带",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-007.jpg"
+    "isPro": false
   },
   {
     "id": "arms-008",
@@ -1146,8 +1032,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "双杠",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-008.jpg"
+    "isPro": false
   },
   {
     "id": "arms-009",
@@ -1156,8 +1041,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "杠铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-009.jpg"
+    "isPro": false
   },
   {
     "id": "arms-010",
@@ -1166,8 +1050,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-010.jpg"
+    "isPro": false
   },
   {
     "id": "arms-011",
@@ -1176,8 +1059,7 @@ module.exports = [
     "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-011.jpg"
+    "isPro": false
   },
   {
     "id": "arms-012",
@@ -1186,8 +1068,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-012.jpg"
+    "isPro": false
   },
   {
     "id": "arms-013",
@@ -1196,8 +1077,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "凳",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-013.jpg"
+    "isPro": false
   },
   {
     "id": "arms-014",
@@ -1206,8 +1086,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "杠铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-014.jpg"
+    "isPro": false
   },
   {
     "id": "arms-015",
@@ -1216,8 +1095,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-015.jpg"
+    "isPro": false
   },
   {
     "id": "arms-016",
@@ -1226,8 +1104,7 @@ module.exports = [
     "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-016.jpg"
+    "isPro": false
   },
   {
     "id": "arms-017",
@@ -1236,8 +1113,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "杠铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-017.jpg"
+    "isPro": false
   },
   {
     "id": "arms-018",
@@ -1246,8 +1122,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-018.jpg"
+    "isPro": false
   },
   {
     "id": "arms-019",
@@ -1256,8 +1131,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-019.jpg"
+    "isPro": false
   },
   {
     "id": "arms-020",
@@ -1266,8 +1140,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-020.jpg"
+    "isPro": false
   },
   {
     "id": "arms-021",
@@ -1276,8 +1149,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-021.jpg"
+    "isPro": false
   },
   {
     "id": "arms-022",
@@ -1286,8 +1158,7 @@ module.exports = [
     "subMuscle": "肱肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-022.jpg"
+    "isPro": false
   },
   {
     "id": "arms-023",
@@ -1296,8 +1167,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-023.jpg"
+    "isPro": false
   },
   {
     "id": "arms-024",
@@ -1306,8 +1176,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-024.jpg"
+    "isPro": false
   },
   {
     "id": "arms-025",
@@ -1316,8 +1185,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-025.jpg"
+    "isPro": false
   },
   {
     "id": "arms-026",
@@ -1326,8 +1194,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-026.jpg"
+    "isPro": false
   },
   {
     "id": "arms-027",
@@ -1336,8 +1203,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "绳索",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-027.jpg"
+    "isPro": false
   },
   {
     "id": "arms-028",
@@ -1346,8 +1212,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "双杠",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-028.jpg"
+    "isPro": false
   },
   {
     "id": "arms-029",
@@ -1356,8 +1221,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-029.jpg"
+    "isPro": false
   },
   {
     "id": "arms-030",
@@ -1366,8 +1230,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-030.jpg"
+    "isPro": false
   },
   {
     "id": "arms-031",
@@ -1376,8 +1239,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-031.jpg"
+    "isPro": false
   },
   {
     "id": "arms-032",
@@ -1386,8 +1248,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-032.jpg"
+    "isPro": false
   },
   {
     "id": "arms-033",
@@ -1396,8 +1257,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "自重",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-033.jpg"
+    "isPro": false
   },
   {
     "id": "arms-034",
@@ -1406,8 +1266,7 @@ module.exports = [
     "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-034.jpg"
+    "isPro": false
   },
   {
     "id": "arms-035",
@@ -1416,8 +1275,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-035.jpg"
+    "isPro": false
   },
   {
     "id": "arms-036",
@@ -1426,8 +1284,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "杠铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-036.jpg"
+    "isPro": false
   },
   {
     "id": "arms-037",
@@ -1436,8 +1293,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-037.jpg"
+    "isPro": false
   },
   {
     "id": "arms-038",
@@ -1446,8 +1302,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-038.jpg"
+    "isPro": false
   },
   {
     "id": "arms-039",
@@ -1456,8 +1311,7 @@ module.exports = [
     "subMuscle": "肱肌",
     "equipment": "自重",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-039.jpg"
+    "isPro": false
   },
   {
     "id": "arms-040",
@@ -1466,8 +1320,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-040.jpg"
+    "isPro": false
   },
   {
     "id": "arms-041",
@@ -1476,8 +1329,7 @@ module.exports = [
     "subMuscle": "肱二头肌",
     "equipment": "杠铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-041.jpg"
+    "isPro": false
   },
   {
     "id": "arms-042",
@@ -1486,8 +1338,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-042.jpg"
+    "isPro": false
   },
   {
     "id": "arms-043",
@@ -1496,8 +1347,7 @@ module.exports = [
     "subMuscle": "肱三头肌",
     "equipment": "哑铃",
     "mark": "臂",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/arms-043.jpg"
+    "isPro": false
   },
   {
     "id": "legs-001",
@@ -1506,8 +1356,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "器械",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-001.jpg"
+    "isPro": false
   },
   {
     "id": "legs-002",
@@ -1516,8 +1365,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-002.jpg"
+    "isPro": false
   },
   {
     "id": "legs-003",
@@ -1526,8 +1374,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-003.jpg"
+    "isPro": false
   },
   {
     "id": "legs-004",
@@ -1536,8 +1383,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-004.jpg"
+    "isPro": false
   },
   {
     "id": "legs-005",
@@ -1546,8 +1392,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-005.jpg"
+    "isPro": false
   },
   {
     "id": "legs-006",
@@ -1556,8 +1401,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-006.jpg"
+    "isPro": false
   },
   {
     "id": "legs-007",
@@ -1566,8 +1410,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-007.jpg"
+    "isPro": false
   },
   {
     "id": "legs-008",
@@ -1576,8 +1419,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "器械",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-008.jpg"
+    "isPro": false
   },
   {
     "id": "legs-009",
@@ -1586,8 +1428,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "器械",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-009.jpg"
+    "isPro": false
   },
   {
     "id": "legs-010",
@@ -1596,8 +1437,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "壶铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-010.jpg"
+    "isPro": false
   },
   {
     "id": "legs-011",
@@ -1606,8 +1446,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "壶铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-011.jpg"
+    "isPro": false
   },
   {
     "id": "legs-012",
@@ -1616,8 +1455,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "壶铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-012.jpg"
+    "isPro": false
   },
   {
     "id": "legs-013",
@@ -1626,8 +1464,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-013.jpg"
+    "isPro": false
   },
   {
     "id": "legs-014",
@@ -1636,8 +1473,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-014.jpg"
+    "isPro": false
   },
   {
     "id": "legs-015",
@@ -1646,8 +1482,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-015.jpg"
+    "isPro": false
   },
   {
     "id": "legs-016",
@@ -1656,8 +1491,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-016.jpg"
+    "isPro": false
   },
   {
     "id": "legs-017",
@@ -1666,8 +1500,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-017.jpg"
+    "isPro": false
   },
   {
     "id": "legs-018",
@@ -1676,8 +1509,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-018.jpg"
+    "isPro": false
   },
   {
     "id": "legs-019",
@@ -1686,8 +1518,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-019.jpg"
+    "isPro": false
   },
   {
     "id": "legs-020",
@@ -1696,8 +1527,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "器械",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-020.jpg"
+    "isPro": false
   },
   {
     "id": "legs-021",
@@ -1706,8 +1536,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-021.jpg"
+    "isPro": false
   },
   {
     "id": "legs-022",
@@ -1716,8 +1545,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-022.jpg"
+    "isPro": false
   },
   {
     "id": "legs-023",
@@ -1726,8 +1554,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-023.jpg"
+    "isPro": false
   },
   {
     "id": "legs-024",
@@ -1736,8 +1563,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-024.jpg"
+    "isPro": false
   },
   {
     "id": "legs-025",
@@ -1746,8 +1572,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-025.jpg"
+    "isPro": false
   },
   {
     "id": "legs-026",
@@ -1756,8 +1581,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-026.jpg"
+    "isPro": false
   },
   {
     "id": "legs-027",
@@ -1766,8 +1590,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-027.jpg"
+    "isPro": false
   },
   {
     "id": "legs-028",
@@ -1776,8 +1599,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-028.jpg"
+    "isPro": false
   },
   {
     "id": "legs-029",
@@ -1786,8 +1608,7 @@ module.exports = [
     "subMuscle": "单腿稳定",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-029.jpg"
+    "isPro": false
   },
   {
     "id": "legs-030",
@@ -1796,8 +1617,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-030.jpg"
+    "isPro": false
   },
   {
     "id": "legs-031",
@@ -1806,8 +1626,7 @@ module.exports = [
     "subMuscle": "大腿前侧",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-031.jpg"
+    "isPro": false
   },
   {
     "id": "legs-032",
@@ -1816,8 +1635,7 @@ module.exports = [
     "subMuscle": "大腿后侧",
     "equipment": "自重",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/legs-032.jpg"
+    "isPro": false
   },
   {
     "id": "calves-001",
@@ -1826,8 +1644,7 @@ module.exports = [
     "subMuscle": "小腿",
     "equipment": "器械",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/calves-001.jpg"
+    "isPro": false
   },
   {
     "id": "calves-002",
@@ -1836,8 +1653,7 @@ module.exports = [
     "subMuscle": "小腿",
     "equipment": "器械",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/calves-002.jpg"
+    "isPro": false
   },
   {
     "id": "calves-003",
@@ -1846,8 +1662,7 @@ module.exports = [
     "subMuscle": "小腿",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/calves-003.jpg"
+    "isPro": false
   },
   {
     "id": "calves-004",
@@ -1856,8 +1671,7 @@ module.exports = [
     "subMuscle": "小腿",
     "equipment": "史密斯",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/calves-004.jpg"
+    "isPro": false
   },
   {
     "id": "calves-005",
@@ -1866,8 +1680,7 @@ module.exports = [
     "subMuscle": "小腿",
     "equipment": "杠铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/calves-005.jpg"
+    "isPro": false
   },
   {
     "id": "calves-006",
@@ -1876,8 +1689,7 @@ module.exports = [
     "subMuscle": "小腿",
     "equipment": "哑铃",
     "mark": "腿",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/calves-006.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-001",
@@ -1886,8 +1698,7 @@ module.exports = [
     "subMuscle": "臀中肌",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-001.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-002",
@@ -1896,8 +1707,7 @@ module.exports = [
     "subMuscle": "臀腿综合",
     "equipment": "壶铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-002.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-003",
@@ -1906,8 +1716,7 @@ module.exports = [
     "subMuscle": "臀腿综合",
     "equipment": "弹力带",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-003.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-004",
@@ -1916,8 +1725,7 @@ module.exports = [
     "subMuscle": "臀后侧",
     "equipment": "弹力带",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-004.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-005",
@@ -1926,8 +1734,7 @@ module.exports = [
     "subMuscle": "臀后侧",
     "equipment": "弹力带",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-005.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-006",
@@ -1936,8 +1743,7 @@ module.exports = [
     "subMuscle": "臀腿综合",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-006.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-007",
@@ -1946,8 +1752,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "杠铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-007.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-008",
@@ -1956,8 +1761,7 @@ module.exports = [
     "subMuscle": "臀后侧",
     "equipment": "杠铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-008.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-009",
@@ -1966,8 +1770,7 @@ module.exports = [
     "subMuscle": "臀后侧",
     "equipment": "杠铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-009.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-010",
@@ -1976,8 +1779,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-010.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-011",
@@ -1986,8 +1788,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "杠铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-011.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-012",
@@ -1996,8 +1797,7 @@ module.exports = [
     "subMuscle": "臀后侧",
     "equipment": "器械",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-012.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-013",
@@ -2006,8 +1806,7 @@ module.exports = [
     "subMuscle": "臀中肌",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-013.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-014",
@@ -2016,8 +1815,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "绳索",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-014.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-015",
@@ -2026,8 +1824,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "绳索",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-015.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-016",
@@ -2036,8 +1833,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "史密斯",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-016.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-017",
@@ -2046,8 +1842,7 @@ module.exports = [
     "subMuscle": "臀腿综合",
     "equipment": "史密斯",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-017.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-018",
@@ -2056,8 +1851,7 @@ module.exports = [
     "subMuscle": "臀后侧",
     "equipment": "哑铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-018.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-019",
@@ -2066,8 +1860,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "哑铃",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-019.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-020",
@@ -2076,8 +1869,7 @@ module.exports = [
     "subMuscle": "臀大肌",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-020.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-021",
@@ -2086,8 +1878,7 @@ module.exports = [
     "subMuscle": "臀腿综合",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-021.jpg"
+    "isPro": false
   },
   {
     "id": "glutes-022",
@@ -2096,8 +1887,7 @@ module.exports = [
     "subMuscle": "臀中肌",
     "equipment": "自重",
     "mark": "臀",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/glutes-022.jpg"
+    "isPro": false
   },
   {
     "id": "core-001",
@@ -2106,8 +1896,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-001.jpg"
+    "isPro": false
   },
   {
     "id": "core-002",
@@ -2116,8 +1905,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-002.jpg"
+    "isPro": false
   },
   {
     "id": "core-003",
@@ -2126,8 +1914,7 @@ module.exports = [
     "subMuscle": "核心综合",
     "equipment": "杠铃",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-003.jpg"
+    "isPro": false
   },
   {
     "id": "core-004",
@@ -2136,8 +1923,7 @@ module.exports = [
     "subMuscle": "核心稳定",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-004.jpg"
+    "isPro": false
   },
   {
     "id": "core-005",
@@ -2146,8 +1932,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-005.jpg"
+    "isPro": false
   },
   {
     "id": "core-006",
@@ -2156,8 +1941,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-006.jpg"
+    "isPro": false
   },
   {
     "id": "core-007",
@@ -2166,8 +1950,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-007.jpg"
+    "isPro": false
   },
   {
     "id": "core-008",
@@ -2176,8 +1959,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-008.jpg"
+    "isPro": false
   },
   {
     "id": "core-009",
@@ -2186,8 +1968,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-009.jpg"
+    "isPro": false
   },
   {
     "id": "core-010",
@@ -2196,8 +1977,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-010.jpg"
+    "isPro": false
   },
   {
     "id": "core-011",
@@ -2206,8 +1986,7 @@ module.exports = [
     "subMuscle": "核心稳定",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-011.jpg"
+    "isPro": false
   },
   {
     "id": "core-012",
@@ -2216,8 +1995,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "器械",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-012.jpg"
+    "isPro": false
   },
   {
     "id": "core-013",
@@ -2226,8 +2004,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-013.jpg"
+    "isPro": false
   },
   {
     "id": "core-014",
@@ -2236,8 +2013,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-014.jpg"
+    "isPro": false
   },
   {
     "id": "core-015",
@@ -2246,8 +2022,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-015.jpg"
+    "isPro": false
   },
   {
     "id": "core-016",
@@ -2256,8 +2031,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-016.jpg"
+    "isPro": false
   },
   {
     "id": "core-017",
@@ -2266,8 +2040,7 @@ module.exports = [
     "subMuscle": "核心综合",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-017.jpg"
+    "isPro": false
   },
   {
     "id": "core-018",
@@ -2276,8 +2049,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-018.jpg"
+    "isPro": false
   },
   {
     "id": "core-019",
@@ -2286,8 +2058,7 @@ module.exports = [
     "subMuscle": "核心稳定",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-019.jpg"
+    "isPro": false
   },
   {
     "id": "core-020",
@@ -2296,8 +2067,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "器械",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-020.jpg"
+    "isPro": false
   },
   {
     "id": "core-021",
@@ -2306,8 +2076,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-021.jpg"
+    "isPro": false
   },
   {
     "id": "core-022",
@@ -2316,8 +2085,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-022.jpg"
+    "isPro": false
   },
   {
     "id": "core-023",
@@ -2326,8 +2094,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-023.jpg"
+    "isPro": false
   },
   {
     "id": "core-024",
@@ -2336,8 +2103,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-024.jpg"
+    "isPro": false
   },
   {
     "id": "core-025",
@@ -2346,8 +2112,7 @@ module.exports = [
     "subMuscle": "核心综合",
     "equipment": "绳索",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-025.jpg"
+    "isPro": false
   },
   {
     "id": "core-026",
@@ -2356,8 +2121,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "绳索",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-026.jpg"
+    "isPro": false
   },
   {
     "id": "core-027",
@@ -2366,8 +2130,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-027.jpg"
+    "isPro": false
   },
   {
     "id": "core-028",
@@ -2376,8 +2139,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "器械",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-028.jpg"
+    "isPro": false
   },
   {
     "id": "core-029",
@@ -2386,8 +2148,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "凳",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-029.jpg"
+    "isPro": false
   },
   {
     "id": "core-030",
@@ -2396,8 +2157,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-030.jpg"
+    "isPro": false
   },
   {
     "id": "core-031",
@@ -2406,8 +2166,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-031.jpg"
+    "isPro": false
   },
   {
     "id": "core-032",
@@ -2416,8 +2175,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-032.jpg"
+    "isPro": false
   },
   {
     "id": "core-033",
@@ -2426,8 +2184,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-033.jpg"
+    "isPro": false
   },
   {
     "id": "core-034",
@@ -2436,8 +2193,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-034.jpg"
+    "isPro": false
   },
   {
     "id": "core-035",
@@ -2446,8 +2202,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-035.jpg"
+    "isPro": false
   },
   {
     "id": "core-036",
@@ -2456,8 +2211,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-036.jpg"
+    "isPro": false
   },
   {
     "id": "core-037",
@@ -2466,8 +2220,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "哑铃",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-037.jpg"
+    "isPro": false
   },
   {
     "id": "core-038",
@@ -2476,8 +2229,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "哑铃",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-038.jpg"
+    "isPro": false
   },
   {
     "id": "core-039",
@@ -2486,8 +2238,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "哑铃",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-039.jpg"
+    "isPro": false
   },
   {
     "id": "core-040",
@@ -2496,8 +2247,7 @@ module.exports = [
     "subMuscle": "腹斜肌",
     "equipment": "哑铃",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-040.jpg"
+    "isPro": false
   },
   {
     "id": "core-041",
@@ -2506,8 +2256,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "哑铃",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-041.jpg"
+    "isPro": false
   },
   {
     "id": "core-042",
@@ -2516,8 +2265,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-042.jpg"
+    "isPro": false
   },
   {
     "id": "core-043",
@@ -2526,8 +2274,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-043.jpg"
+    "isPro": false
   },
   {
     "id": "core-044",
@@ -2536,8 +2283,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-044.jpg"
+    "isPro": false
   },
   {
     "id": "core-045",
@@ -2546,8 +2292,7 @@ module.exports = [
     "subMuscle": "核心综合",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-045.jpg"
+    "isPro": false
   },
   {
     "id": "core-046",
@@ -2556,8 +2301,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-046.jpg"
+    "isPro": false
   },
   {
     "id": "core-047",
@@ -2566,8 +2310,7 @@ module.exports = [
     "subMuscle": "核心稳定",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-047.jpg"
+    "isPro": false
   },
   {
     "id": "core-048",
@@ -2576,8 +2319,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-048.jpg"
+    "isPro": false
   },
   {
     "id": "core-049",
@@ -2586,8 +2328,7 @@ module.exports = [
     "subMuscle": "上腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-049.jpg"
+    "isPro": false
   },
   {
     "id": "core-050",
@@ -2596,8 +2337,7 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-050.jpg"
+    "isPro": false
   },
   {
     "id": "core-051",
@@ -2606,7 +2346,6 @@ module.exports = [
     "subMuscle": "下腹",
     "equipment": "自重",
     "mark": "核",
-    "isPro": false,
-    "thumbPath": "/pages/exercises/thumbs/core-051.jpg"
+    "isPro": false
   }
 ]

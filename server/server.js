@@ -87,7 +87,7 @@ function isMember(user) {
   return new Date(user.membership_expires_at).getTime() > Date.now();
 }
 
-function publicExercise(exercise, member) {
+function publicExercise(req, exercise, member) {
   const view = {
     id: exercise.id,
     name: exercise.name,
@@ -95,13 +95,16 @@ function publicExercise(exercise, member) {
     subMuscle: exercise.subMuscle,
     equipment: exercise.equipment,
     mark: exercise.mark || exercise.muscle,
-    thumbPath: `/pages/exercises/thumbs/${exercise.id}.jpg`,
     isPro: !!exercise.isPro,
     locked: !!exercise.isPro && !member
   };
 
-  if (exercise.thumbKey && (!exercise.isPro || member) && cos && COS_BUCKET && COS_REGION) {
-    view.thumbUrl = signCosUrl(exercise.thumbKey);
+  if (exercise.thumbKey && (!exercise.isPro || member)) {
+    try {
+      view.thumbUrl = assetUrl(req, exercise.thumbKey);
+    } catch {
+      view.thumbUrl = '';
+    }
   }
 
   return view;
@@ -268,7 +271,7 @@ app.get('/api/exercises', auth, (req, res) => {
       expiresAt: user?.membership_expires_at || null,
       active: member
     },
-    exercises: exerciseCatalog.map(exercise => publicExercise(exercise, member))
+    exercises: exerciseCatalog.map(exercise => publicExercise(req, exercise, member))
   });
 });
 

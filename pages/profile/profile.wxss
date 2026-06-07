@@ -9,9 +9,7 @@
 
 /* 1. 用户卡片 */
 .user-card {
-  background: var(--bg-card);
-  border-radius: 24rpx;
-  padding: 40rpx;
+  padding: 12rpx 0 8rpx;
   margin-bottom: 32rpx;
 }
 

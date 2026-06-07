@@ -23,6 +23,8 @@ const ADMIN_SECRET = process.env.ADMIN_SECRET;
 const COS_BUCKET = process.env.TENCENT_COS_BUCKET;
 const COS_REGION = process.env.TENCENT_COS_REGION;
 const COS_SIGN_EXPIRES = Number(process.env.COS_SIGN_EXPIRES || 600);
+const API_PUBLIC_BASE_URL = process.env.API_PUBLIC_BASE_URL;
+const LOCAL_ASSETS_DIR = path.resolve(__dirname, '..', 'assets');
 
 const cos = process.env.TENCENT_SECRET_ID && process.env.TENCENT_SECRET_KEY
   ? new COS({
@@ -105,6 +107,36 @@ function publicExercise(exercise, member) {
   return view;
 }
 
+function publicBaseUrl(req) {
+  if (API_PUBLIC_BASE_URL) return API_PUBLIC_BASE_URL.replace(/\/$/, '');
+  return `${req.protocol}://${req.get('host')}`;
+}
+
+function localAssetPath(key) {
+  const relative = key.replace(/^exercises\//, '');
+  return path.join(LOCAL_ASSETS_DIR, relative);
+}
+
+function hasLocalAsset(key) {
+  try {
+    return require('fs').existsSync(localAssetPath(key));
+  } catch {
+    return false;
+  }
+}
+
+function localAssetUrl(req, key) {
+  const relative = key.replace(/^exercises\//, '');
+  return `${publicBaseUrl(req)}/exercise-assets/${relative}`;
+}
+
+function assetUrl(req, key) {
+  if (!key) return null;
+  if (cos && COS_BUCKET && COS_REGION) return signCosUrl(key);
+  if (hasLocalAsset(key)) return localAssetUrl(req, key);
+  throw new Error(`asset not found: ${key}`);
+}
+
 function signCosUrl(key) {
   if (!cos || !COS_BUCKET || !COS_REGION) {
     throw new Error('COS is not configured');
@@ -158,6 +190,10 @@ function code2session(code) {
 // ========== Express ==========
 const app = express();
 app.use(express.json({ limit: '10mb' }));
+app.use('/exercise-assets', express.static(LOCAL_ASSETS_DIR, {
+  maxAge: '30d',
+  immutable: true
+}));
 
 // 鉴权中间件
 function auth(req, res, next) {
@@ -249,8 +285,8 @@ app.get('/api/exercises/:id/assets', auth, (req, res) => {
   try {
     res.json({
       id: exercise.id,
-      thumbUrl: signCosUrl(exercise.thumbKey),
-      videoUrl: exercise.videoKey ? signCosUrl(exercise.videoKey) : null,
+      thumbUrl: assetUrl(req, exercise.thumbKey),
+      videoUrl: assetUrl(req, exercise.videoKey),
       expiresIn: COS_SIGN_EXPIRES
     });
   } catch (err) {

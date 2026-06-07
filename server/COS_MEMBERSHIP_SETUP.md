@@ -28,6 +28,7 @@ TENCENT_COS_BUCKET=fitness-exercises-1318589271
 TENCENT_COS_REGION=ap-guangzhou
 COS_SIGN_EXPIRES=600
 ADMIN_SECRET=change_me_too
+API_PUBLIC_BASE_URL=https://xckjsoft.cn/fitness-api
 ```
 
 不要把真实 `.env` 提交到仓库。
@@ -71,3 +72,28 @@ GET /api/exercises/:id/assets
 ```
 
 非会员能看到 Pro 动作锁定状态，但拿不到 COS 临时 URL。
+
+## 6. 不用 COS 的本地视频兜底
+
+如果暂时不配置 COS，可以把压缩后的 `assets` 目录放到后端项目同级：
+
+```text
+fitness-miniprogram/
+  assets/
+    chest-001/thumb.jpg
+    chest-001/demo.mp4
+  server/
+    server.js
+```
+
+后端会通过静态地址返回视频：
+
+```text
+https://xckjsoft.cn/fitness-api/exercise-assets/chest-001/demo.mp4
+```
+
+宝塔/Nginx 使用 `/fitness-api` 反代时，务必在 `.env` 设置：
+
+```env
+API_PUBLIC_BASE_URL=https://xckjsoft.cn/fitness-api
+```

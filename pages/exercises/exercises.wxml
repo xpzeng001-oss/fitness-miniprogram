@@ -122,6 +122,9 @@
         ></video>
         <image wx:elif="{{activeExercise.displayThumb}}" class="detail-image" src="{{activeExercise.displayThumb}}" mode="aspectFill"></image>
         <view wx:else class="movement-figure">{{activeExercise.mark}}</view>
+        <view wx:if="{{activeExercise.assetError && !activeExercise.videoUrl}}" class="detail-asset-error">
+          {{activeExercise.assetError}}
+        </view>
       </view>
 
       <view class="detail-body">

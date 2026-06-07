@@ -380,6 +380,7 @@
 }
 
 .detail-media {
+  position: relative;
   width: calc(100% - 80rpx);
   height: calc(100vw - 80rpx);
   border-radius: 28rpx;
@@ -397,6 +398,21 @@
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.detail-asset-error {
+  position: absolute;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: 24rpx;
+  border-radius: 18rpx;
+  padding: 14rpx 18rpx;
+  background: rgba(20, 21, 25, 0.72);
+  color: var(--text-primary);
+  font-size: 24rpx;
+  line-height: 1.3;
+  font-weight: 700;
+  text-align: center;
 }
 
 .detail-body {

@@ -209,11 +209,12 @@ Page({
         })
       })
       .catch(err => {
+        const message = err.message === 'membership required' ? '需要会员权限' : (err.message || '视频加载失败')
         this.setData({
           activeExercise: {
             ...this.data.activeExercise,
             loadingAssets: false,
-            assetError: err.message === 'membership required' ? '需要会员权限' : ''
+            assetError: message
           }
         })
       })

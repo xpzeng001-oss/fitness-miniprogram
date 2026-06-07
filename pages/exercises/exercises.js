@@ -242,6 +242,14 @@ Page({
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setHidden(hidden)
     }
+
+    const method = hidden ? wx.hideTabBar : wx.showTabBar
+    if (method) {
+      method({
+        animation: false,
+        fail: () => {}
+      })
+    }
   },
 
   onExerciseVideoError() {

@@ -12,6 +12,10 @@
   display: flex;
 }
 
+.tabbar.hidden {
+  display: none;
+}
+
 .tabbar-item {
   flex: 1;
   min-width: 0;

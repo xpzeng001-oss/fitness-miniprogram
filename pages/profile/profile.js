@@ -12,6 +12,7 @@ Page({
     totalCount: ACHIEVEMENTS.length,
     achievementProgress: 0,
     achievementsExpanded: false,
+    isLoggedOut: false,
     totalVolumeTons: 0,
     storageSize: 0
   },
@@ -39,7 +40,11 @@ Page({
   },
 
   loadUserData() {
+    const isLoggedOut = !!wx.getStorageSync('authLoggedOut')
     const userData = wx.getStorageSync('userData') || this.getDefaultUserData()
+    const profile = isLoggedOut
+      ? { ...userData.profile, nickname: '未登录', avatar: '' }
+      : userData.profile
     const workoutRecords = wx.getStorageSync('workoutRecords') || []
     const prRecords = wx.getStorageSync('prRecords') || {}
     const prCount = Object.keys(prRecords).length
@@ -60,9 +65,10 @@ Page({
     const storageSize = storageInfo.currentSize
 
     this.setData({
-      userInfo: userData.profile,
+      userInfo: profile,
       statistics: statistics,
       settings: userData.settings,
+      isLoggedOut,
       totalVolumeTons: (totalVolume / 1000).toFixed(1),
       storageSize: storageSize
     })
@@ -93,6 +99,10 @@ Page({
 
   // 修改头像 - 调用微信选择头像
   changeAvatar() {
+    if (this.data.isLoggedOut) {
+      this.loginNow()
+      return
+    }
     wx.chooseMedia({
       count: 1,
       mediaType: ['image'],
@@ -127,6 +137,10 @@ Page({
 
   // 修改昵称
   editNickname() {
+    if (this.data.isLoggedOut) {
+      this.loginNow()
+      return
+    }
     const currentNickname = this.data.userInfo.nickname || ''
     wx.showModal({
       title: '修改昵称',
@@ -191,6 +205,10 @@ Page({
   },
 
   editProfile() {
+    if (this.data.isLoggedOut) {
+      this.loginNow()
+      return
+    }
     this.editNickname()
   },
 
@@ -217,6 +235,52 @@ Page({
         }
       }
     })
+  },
+
+  loginNow() {
+    wx.removeStorageSync('authLoggedOut')
+    wx.showLoading({ title: '登录中' })
+    app.loginAndSync().then(() => {
+      wx.hideLoading()
+      this.loadUserData()
+      this.loadAchievements()
+      wx.showToast({ title: '已登录', icon: 'success' })
+    }).catch(() => {
+      wx.hideLoading()
+      wx.setStorageSync('authLoggedOut', true)
+      wx.showToast({ title: '登录失败，请稍后再试', icon: 'none' })
+      this.loadUserData()
+    })
+  },
+
+  logout() {
+    wx.showModal({
+      title: '退出登录',
+      content: '退出后会停止云端同步，并清除本机头像昵称缓存；训练记录、PR、体重和成就会保留在本机。',
+      confirmText: '退出',
+      confirmColor: '#ff6b35',
+      success: (res) => {
+        if (!res.confirm) return
+
+        const userData = wx.getStorageSync('userData') || this.getDefaultUserData()
+        userData.profile = this.getDefaultUserData().profile
+
+        wx.removeStorageSync('token')
+        wx.setStorageSync('authLoggedOut', true)
+        wx.setStorageSync('userData', userData)
+
+        this.loadUserData()
+        wx.showToast({ title: '已退出登录', icon: 'success' })
+      }
+    })
+  },
+
+  toggleLoginState() {
+    if (this.data.isLoggedOut) {
+      this.loginNow()
+    } else {
+      this.logout()
+    }
   },
 
   exportData() {

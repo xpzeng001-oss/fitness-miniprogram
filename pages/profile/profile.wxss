@@ -384,6 +384,10 @@
   background: rgba(255, 71, 87, 0.05);
 }
 
+.setting-item.account-action.logout .setting-label {
+  color: var(--text-primary);
+}
+
 .setting-label {
   flex: 1;
   font-size: 28rpx;

@@ -7,17 +7,20 @@ App({
     // 初始化本地存储
     this.initStorage();
     // 登录并同步数据
-    this.loginAndSync();
+    this.loginAndSync().catch(() => {});
   },
 
   loginAndSync() {
-    api.login().then(({ isNewUser }) => {
+    if (wx.getStorageSync('authLoggedOut')) {
+      return Promise.resolve({ skipped: true });
+    }
+    return api.login().then(({ isNewUser }) => {
       if (isNewUser) {
-        api.pushAll();
+        return api.pushAll();
       } else {
-        api.pullAll();
+        return api.pullAll();
       }
-    }).catch(() => {});
+    });
   },
 
   initStorage() {
